@@ -1,0 +1,9 @@
+<%# insert navbar with search options %>
+<h1>Un nouvel ami t'attend !</h1>
+<div class="container">
+  <div class="row">
+    <% @friends.each do |friend| %>
+      <%= render "shared/friend_card", friend: friend %>
+    <% end %>
+  </div>
+</div>
