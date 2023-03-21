@@ -2,3 +2,8 @@
 
 <% @bookings.each do |booking|%>
 <%= booking.status%>
+<%= booking.start_date%>
+<%= booking.end_date%>
+<%end%>
+
+<%= link_to "Update your booking", edit_booking_path(booking), class: "btn btn-primary mx-4"%>
