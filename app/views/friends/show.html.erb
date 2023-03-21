@@ -1,2 +1,14 @@
-<h1>Recontre <%= @friend.name %>!</h1>
-<%= image_tag  @friend.picture %>
+<%= render "shared/navbar" %>
+<div class="container">
+  <div class="d-flex justify-content align-items-center">
+    <%= image_tag  @friend.picture %>
+    <h1>Rencontre <%= @friend.name %>!</h1>
+  </div>
+  <div class="row">
+    <div class="col-9 bg-grey">
+      <h2> Activités </h2>
+      <p>disponible pour</p>
+    </div>
+  </div>
+  <p><%= link_to "Réserver", new_friend_booking_path(@friend) %></p>
+</div>
