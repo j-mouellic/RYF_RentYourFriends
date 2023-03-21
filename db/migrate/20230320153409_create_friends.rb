@@ -31,6 +31,7 @@ class CreateFriends < ActiveRecord::Migration[7.0]
       t.boolean :quality_honest
       t.boolean :quality_good_looking
       t.boolean :quality_brave
+      t.references :user, null: false, foreign_key: true
 
       t.timestamps
     end
