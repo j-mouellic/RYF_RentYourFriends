@@ -1,2 +1,36 @@
 // Import page-specific CSS files here.
 @import "home";
+
+.container {
+  margin-top: 48px;
+  display: flex;
+  justify-content: space-between;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+}
+
+#booking-new {
+  padding: 24px;
+  border: 1px solid rgb(221, 221, 221);
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
+  box-sizing: border-box;
+}
+
+.img-profile {
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
+  size-adjust: 20%;
+}
+
+.col-9 {
+  border: 1px solid rgb(221, 221, 221);
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
+  box-sizing: border-box;
+}
+
+.user-information {
+  width: 100%;
+}
