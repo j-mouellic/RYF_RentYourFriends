@@ -9,7 +9,7 @@ jean = User.new(
   pseudo: "JB",
   first_name: "Jean",
   last_name: "Bombeur",
-  email: "BriocheDorée@beurre.com",
+  email: "BriocheDoree@beurre.com",
   password: "sandwichTriangle",
 )
 
@@ -379,5 +379,3 @@ booking.user = edgard
 bob = Friend.first
 booking.friend = bob
 booking.save!
-
-

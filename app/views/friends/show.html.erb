@@ -1,3 +1,4 @@
+
 <%= render "shared/navbar" %>
 <div class="container">
   <div class="d-flex justify-content align-items-center">
@@ -11,4 +12,11 @@
     </div>
   </div>
   <p><%= link_to "Réserver", new_friend_booking_path(@friend) %></p>
+
+<div id="booking-new">
+  <%= simple_form_for ([@friend, Booking.new]) do |f| %>
+    <%= f.input :start_date %>
+    <%= f.input :end_date %>
+    <%= f.submit %>
+  <% end %>
 </div>
