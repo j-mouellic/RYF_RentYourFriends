@@ -1,1 +1,8 @@
-<h1> test </h1>
+<h1> Create a new review </h1>
+<%= simple_form_for([@friend, @booking, @review]) do |f| %>
+  <%= f.input :review_content %>
+  <%= f.input :review_rating %>
+  <%= f.button :submit %>
+<% end %>
+
+<%= link_to "Go back to bookings",  bookings_path %>
