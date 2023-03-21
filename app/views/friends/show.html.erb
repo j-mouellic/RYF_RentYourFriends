@@ -1,2 +1,10 @@
-<h1>Recontre <%= @friend.name %>!</h1>
+<h1>Rencontre <%= @friend.name %>!</h1>
 <%= image_tag  @friend.picture %>
+
+<div id="booking-new">
+  <%= simple_form_for ([@friend, Booking.new]) do |f| %>
+    <%= f.input :start_date %>
+    <%= f.input :end_date %>
+    <%= f.submit %>
+  <% end %>
+</div>
