@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_20_154310) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_20_170149) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -58,8 +58,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_20_154310) do
     t.boolean "quality_honest"
     t.boolean "quality_good_looking"
     t.boolean "quality_brave"
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "picture"
+    t.index ["user_id"], name: "index_friends_on_user_id"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -91,6 +94,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_20_154310) do
 
   add_foreign_key "bookings", "friends"
   add_foreign_key "bookings", "users"
+  add_foreign_key "friends", "users"
   add_foreign_key "reviews", "bookings"
   add_foreign_key "reviews", "users"
 end
