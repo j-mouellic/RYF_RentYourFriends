@@ -5,17 +5,18 @@ class BookingsController < ApplicationController
 
   def new
     @booking = Booking.new
-    @user = User.find(params[:user_id])
   end
 
   def create
     @booking = Booking.new(booking_params)
-    @user = User.find(params[:user_id])
-    @booking.user = @user
-    if @booking.save
-      redirect_to user_path(@user)
+    @booking.user = current_user
+    @booking.friend = Friend.find(params[:friend_id])
+    @booking.status = "pending"
+    if @booking.save!
+      redirect_to friend_path(@booking.friend), notice: "Votre réservation a bien été faite"
     else
-      render :new, status: :unprocessable_entity
+      redirect_to friend_path(@booking.friend), notice: "Votre réservation a échouée"
+      # render :new, status: :unprocessable_entity
     end
   end
 
@@ -34,6 +35,6 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:status, :start_date, :end_date, :friend_id, :user_id)
+    params.require(:booking).permit(:status, :start_date, :end_date)
   end
 end
