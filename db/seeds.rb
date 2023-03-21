@@ -1,3 +1,4 @@
+
 # Créer 2 users
 
 Booking.destroy_all
@@ -378,3 +379,5 @@ booking.user = edgard
 bob = Friend.first
 booking.friend = bob
 booking.save!
+
+
