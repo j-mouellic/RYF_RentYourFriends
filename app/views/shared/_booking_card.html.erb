@@ -1,0 +1,19 @@
+<div class="card d-flex">
+  </p>Vous avez rendez-vous avec
+    <%= booking.friend.name.capitalize %>!
+  <p>
+  <p>Statut :
+    <%= booking.status%>
+  </p>
+  <% if booking.start_date == booking.end_date %>
+    <%= "Le #{booking.start_date}" %>
+  <% else %>
+    <%= "Du #{booking.start_date} au #{booking.end_date}"%>
+  <% end %>
+  <%= booking.total_price %>
+  <% if booking.status == "finished" %>
+    <%# ajouter du js pour déplier de quoi mettre une review? %>
+  <% else %>
+    <%= link_to "modifier votre réservation", edit_booking_path(booking), class: "btn btn-light" %>
+  <% end %>
+</div>

@@ -1,6 +1,7 @@
 class BookingsController < ApplicationController
   def index
     @bookings = Booking.where(user_id: current_user.id)
+    @requests = Booking.joins(friend: :user).where(users: { id: current_user.id }, friends: { user_id: current_user.id })
   end
 
   def new
@@ -13,7 +14,7 @@ class BookingsController < ApplicationController
     @booking.friend = Friend.find(params[:friend_id])
     @booking.status = "pending"
     if @booking.save!
-      redirect_to friend_path(@booking.friend), notice: "Votre réservation a bien été faite"
+      redirect_to friend_path(@booking.friend), notice: "Votre réservation est en attente de confirmation !"
     else
       redirect_to friend_path(@booking.friend), notice: "Votre réservation a échouée"
       # render :new, status: :unprocessable_entity

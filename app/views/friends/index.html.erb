@@ -2,7 +2,7 @@
 <h1>Un nouvel ami t'attend !</h1>
 </div>
 <div class="container">
-  <div class="row">
+  <div class="row justify-content-between">
     <% @friends.each do |friend| %>
       <%= render "shared/friend_card", friend: friend %>
     <% end %>
