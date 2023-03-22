@@ -58,7 +58,8 @@ friends = [
     quality_good_looking: false,
     quality_brave: false,
     picture: "https://randomuser.me/api/portraits/men/25.jpg",
-    description: ""
+    description: "Je loue Bob car il dévalise mon frigo depuis plus de 2 ans. Évitez le restaurant avec lui et les apéros car il devient
+    complotiste après 3 verres. Bob sera parfait dans vos moments de déprimes pour vous faire rire !"
   },
   {
     name: "marie",
@@ -91,7 +92,8 @@ friends = [
     quality_honest: false,
     quality_good_looking: true,
     quality_brave: true,
-    picture: "https://randomuser.me/api/portraits/women/67.jpg"
+    picture: "https://randomuser.me/api/portraits/women/67.jpg",
+    description: "some description"
   },
   {
     name: "myriam",
@@ -125,7 +127,7 @@ friends = [
     quality_good_looking: true,
     quality_brave: false,
     picture: "https://randomuser.me/api/portraits/women/31.jpg",
-    decription: "Myriam n’est pas avare de bonnes blagues qui sauront impressionner vos convives.
+    description: "Myriam n’est pas avare de bonnes blagues qui sauront impressionner vos convives.
     Véritable couteau suisse belge, elle saura embellir vos moments de vie.
     Gourmande par nature, prévoyez de quoi la sustanter. A défaut, son impatience couplée à ses élans de folie dévastateurs pourront quelque peu gâcher votre activité."
   },
