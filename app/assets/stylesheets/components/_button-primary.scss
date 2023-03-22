@@ -1,0 +1,14 @@
+.button-primary{
+  padding: 8px 16px;
+  background-color: rgb(5, 106, 201);
+  border-radius: 16px;
+  color: white;
+  transition: ease 0.3s;
+  border: none;
+}
+
+.button-primary:hover{
+  background-color: rgb(7, 32, 56);
+  color: white;
+  transition: ease 0.3s;
+}

@@ -1,5 +1,13 @@
-.activity{
-  padding: 10px 12px;
-  color: white;
-  background-color: rgb(2, 2, 75);
+.activity-grid{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 100%;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+}
+
+.activity-grid i{
+  margin: 0;
+  font-size: 1.5em;
 }
