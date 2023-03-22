@@ -4,7 +4,10 @@
     <%= link_to friends_path, class: "navbar-brand" do %>
       <%= image_tag "RYF.png" %>
     <% end %>
-
+    <form action=””>
+      <input type=”search” placeholder="Trouvez votre ami">
+      <i class="fa fa-search"></i>
+    </form>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -15,6 +18,7 @@
           <li class="nav-item dropdown">
             <%= image_tag "https://pbs.twimg.com/media/CHGbzGeWcAAHthn.jpg:large", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+            <%= link_to "Mon compte", user_path(current_user), class: "dropdown-item" %>
               <%= link_to "Mes réservations", bookings_path, class: "dropdown-item" %>
               <%= link_to "Mes demandes de location en attente", "#", class: "dropdown-item" %>
               <%= link_to "Deconnexion", destroy_user_session_path , class: "dropdown-item", data: {turbo_method: :delete} %>

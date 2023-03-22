@@ -57,7 +57,8 @@ friends = [
     quality_honest: false,
     quality_good_looking: false,
     quality_brave: false,
-    picture: "https://randomuser.me/api/portraits/men/25.jpg"
+    picture: "https://randomuser.me/api/portraits/men/25.jpg",
+    description: ""
   },
   {
     name: "marie",
@@ -123,7 +124,10 @@ friends = [
     quality_honest: true,
     quality_good_looking: true,
     quality_brave: false,
-    picture: "https://randomuser.me/api/portraits/women/31.jpg"
+    picture: "https://randomuser.me/api/portraits/women/31.jpg",
+    decription: "Myriam n’est pas avare de bonnes blagues qui sauront impressionner vos convives.
+    Véritable couteau suisse belge, elle saura embellir vos moments de vie.
+    Gourmande par nature, prévoyez de quoi la sustanter. A défaut, son impatience couplée à ses élans de folie dévastateurs pourront quelque peu gâcher votre activité."
   },
   {
     name: "Ginette",
@@ -156,7 +160,8 @@ friends = [
     quality_honest: false,
     quality_good_looking: true,
     quality_brave: false,
-    picture: "https://randomuser.me/api/portraits/women/22.jpg"
+    picture: "https://randomuser.me/api/portraits/women/22.jpg",
+    description: "L’on dit d’elle qu’elle se distingue par sa bonhommie et sa rapidité à se mettre à table. Son arrière grand-père contait qu’un repas sans fromage n’est pas un repas digne de ce nom. Véritable moulin à paroles, Ginette ne mâche pas ses mots et est parfaitement adaptée à des activités sportives ou bien évidemment culinaires."
   },
   {
     name: "Bernard",
@@ -184,12 +189,13 @@ friends = [
     default_disorganized: true,
     default_cheap: false,
     default_arrogant: true,
-    quality_funny: false,
+    quality_funny: true,
     quality_reliable: true,
     quality_honest: true,
     quality_good_looking: false,
     quality_brave: true,
-    picture: "https://randomuser.me/api/portraits/men/72.jpg"
+    picture: "https://randomuser.me/api/portraits/men/72.jpg",
+    description: "Bernard, Bernard, Bernard… « Le clown de Bretagne » comme ses amis du PMU l’aime l’appeler. Il aime pousser la chansonnette, surtout lorsque l’Envie de Johnny vient titiller ses tympans. Très actif, Bernard pratique depuis des décennies la pétanque bretonne. N’ayant pas sa langue dans sa poche, il saura lancer et animer des débats houleux. Repas en famille à prescrire."
   },
   {
     name: "Luc",
@@ -222,7 +228,9 @@ friends = [
     quality_honest: true,
     quality_good_looking: false,
     quality_brave: false,
-    picture: "https://randomuser.me/api/portraits/men/80.jpg"
+    picture: "https://randomuser.me/api/portraits/men/80.jpg",
+    description: "Luc est aussi proche de ses amis que de ses sous. C’est mon meilleur ami. Ne comptez pas sur lui pour apporter de quoi vous régaler au picnic, il vous apportera néanmoins une bonne dose de vitalité et une joie de vivre à toute épreuve. Attention avant de faire du shopping, il oublie souvent son porte-monnaie...
+    "
   },
   {
     name: "Johnny Boy",
@@ -255,7 +263,8 @@ friends = [
     quality_honest: true,
     quality_good_looking: false,
     quality_brave: true,
-    picture: "https://randomuser.me/api/portraits/men/90.jpg"
+    picture: "https://randomuser.me/api/portraits/men/90.jpg",
+    description: "Johnny Boy est un très bon rapport qualité/prix pour toutes vos activités d’intérieur. Si vous souhaitez passer une soirée endiablée autour d’un karaoké ou autour d’un bon feu de cheminée à jouer aux jeux de société, Johnny est l’homme de la situation. De très (trop) bonne compagnie, ne l’installez pas à côté de votre bien-aimée. A bon entendeur..."
   },
   {
     name: "Lily",
@@ -288,7 +297,8 @@ friends = [
     quality_honest: true,
     quality_good_looking: true,
     quality_brave: true,
-    picture: "https://randomuser.me/api/portraits/women/23.jpg"
+    picture: "https://randomuser.me/api/portraits/women/23.jpg",
+    description: "Je connais Lily depuis 15 ans et j’ai rarement connu une personne aussi conviviale et chaleureuse. Nul ne peut oublier les barbecues passés en sa compagnie. C'est une grande amatrice de la théorie du complot et elle ne manquera pas de partager les actualités du sujet."
   },
   {
     name: "Marshall",
@@ -302,7 +312,7 @@ friends = [
     activity_birthday: true,
     activity_bowling: false,
     activity_hike: false,
-    activity_movie: false,
+    activity_movie: true,
     activity_picnic: false,
     activity_concert: false,
     activity_karaoke: true,
@@ -321,7 +331,8 @@ friends = [
     quality_honest: false,
     quality_good_looking: false,
     quality_brave: false,
-    picture: "https://randomuser.me/api/portraits/men/29.jpg"
+    picture: "https://randomuser.me/api/portraits/men/29.jpg",
+    description: "Marshall peut être comparé à un Teddy Bear: doux, gentil et réconfortant. C’est le compagnon idéal pour vos soirées film, confortablement installés dans votre canapé. Rigolo, il reste néanmoins très désorganisé et il faudra lui rappeler la fin du rendez-vous pour qu’il parte, au risque qu’il s’installe dans votre salon."
   },
   {
     name: "Barney",
@@ -354,7 +365,8 @@ friends = [
     quality_honest: false,
     quality_good_looking: false,
     quality_brave: true,
-    picture: "https://randomuser.me/api/portraits/men/45.jpg"
+    picture: "https://randomuser.me/api/portraits/men/45.jpg",
+    description: "Barney, coquin malin, c’est LE copain qu’il vous faut pour ravir vos ami(e)s célibataires. Pour un prix raisonnable, il rendra vos anniversaire LÉ-GEN-DAI-RES, au bas mot. Créatif et audacieux, il saura vous surprendre à quelconque heure de la journée et de la nuit. N’attendez pas de lui qu’il débarasse la table."
   }
 ]
 

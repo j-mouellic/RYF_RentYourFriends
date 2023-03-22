@@ -1,2 +1,17 @@
 // Import page-specific CSS files here.
 @import "home";
+
+.card-category {
+  background-size: cover;
+  background-position: center;
+  height: 180px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.home-avatar {
+  width: 40px;
+  border-radius: 50%;
+}
+
