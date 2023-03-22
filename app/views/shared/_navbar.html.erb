@@ -20,7 +20,6 @@
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
             <%= link_to "Mon compte", user_path(current_user), class: "dropdown-item" %>
               <%= link_to "Mes réservations", bookings_path, class: "dropdown-item" %>
-              <%= link_to "Mes demandes de location en attente", "#", class: "dropdown-item" %>
               <%= link_to "Deconnexion", destroy_user_session_path , class: "dropdown-item", data: {turbo_method: :delete} %>
             </div>
           </li>

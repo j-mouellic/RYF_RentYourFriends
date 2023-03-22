@@ -1,17 +1,96 @@
 // Import page-specific CSS files here.
 @import "home";
 
+p{
+  margin: 0 8px 0 0;
+}
+
+a{
+  text-decoration: none;
+  color: white;
+}
+
+#wrapper-friends{
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
 .card-category {
   background-size: cover;
   background-position: center;
-  height: 180px;
   display: flex;
   justify-content: start;
   align-items: center;
+  height: 180px;
+  color: white;
 }
 
 .home-avatar {
-  width: 40px;
+  max-width:50px;
+  max-height:50px;
+  width: auto;
+  height: auto;
   border-radius: 50%;
+  margin-right: 8px;
 }
 
+.grid-friends{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  width: 100%;
+  font-weight: 100;
+}
+
+.card-home {
+  background-color: rgb(255, 255, 255);
+  color: #727584;
+  padding: 16px;
+  border-radius: 16px;
+  box-shadow: 2px 2px 5px rgba($color: #000000, $alpha: 0.2),
+  -2px -2px 5px rgba($color: #afa8a8, $alpha: 0.2);
+}
+
+.friend {
+  margin-bottom: 12px;
+}
+
+.friend::after{
+  content: "";
+  height: 1px;
+  margin-top: 12px;
+  display: block;
+  width: 100%;
+  background-color: rgba($color: #727584, $alpha: 0.4);
+}
+
+.name-qualities {
+  width: 100%;
+  text-align: center;
+}
+
+
+.friend-qualities-card {
+  width: 100%;
+  font-size: 18px;
+  padding: 6px;
+}
+
+.friend-qualities-card p {
+  display: inline-block;
+}
+
+.friend-price {
+  width: 130px;
+  padding: 0 6px 0 6px;
+}
+
+.friend-activities-grid {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 6px;
+  gap: 16px;
+  grid-template-columns: repeat(5, 1fr);
+}
