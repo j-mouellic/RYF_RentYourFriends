@@ -17,14 +17,18 @@
 
   <div id="booking-new">
     <%= simple_form_for ([@friend, Booking.new]) do |f| %>
-      <%= f.input :start_date, required: true, label: "Début", as: :string, input_html: { data: { controller: "datepicker" } }%>
-      <%= f.input :end_date, required: true, label: "Fin", as: :string, input_html: { data: { controller: "datepicker" } } %>
+      <%= f.input :start_date, required: true, locale: 'fr', format: 'dd/mm/yyyy', label: "Début", as: :string, input_html: { data: { controller: "datepicker" } }%>
+      <%= f.input :end_date, required: true, locale: 'fr', format: 'dd/mm/yyyy', label: "Fin", as: :string, input_html: { data: { controller: "datepicker" } } %>
       <%= f.submit "Réserver" %>
+
+      <p> <br> <%= @friend.price%> euros / jour</p>
+      <%# <% @bookings = Booking.where(user_id: current_user.id)%>
+      <%# <% (@friend.end_date) - (@friend.start_date)%>
+      <%# <%= (Date.parse(params[@friend][:end_date]).to_i / 86_400) %>
       </div>
     <% end %>
   </div>
 </div>
-
 
 <% if @friend.activity_wedding? %>
   <p class="activity">Mariage</p>
