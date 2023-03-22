@@ -1,4 +1,19 @@
-<div class= "card col-3 d-flex">
+<div class= "card col-4 d-flex p-1">
+  <%= image_tag friend.picture , class: "home-avatar"%>
   <p><%= friend.name %></p>
+  <p><%= friend.price %>€/jour</p>
+  <% qualities = [] %>
+  <% qualities.push "drôle" if friend.quality_funny%>
+  <% qualities.push "fiable" if friend.quality_reliable%>
+  <% qualities.push "honnête" if friend.quality_honest%>
+  <% qualities.push "Stylé" if friend.quality_good_looking%>
+  <% qualities.push "Plein de courage" if friend.quality_brave%>
+  <% 3.times do %>
+    <% if qualities.any? %>
+      <% quality = qualities.sample %>
+      <li><%= quality %></li>
+      <% qualities.delete(quality) %>
+    <% end %>
+  <% end %>
   <%= link_to "voir plus", friend_path(friend) %>
 </div>

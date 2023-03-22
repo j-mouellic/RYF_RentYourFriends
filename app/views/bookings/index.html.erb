@@ -1,9 +1,16 @@
-<h1>Your booking </h1>
-
-<% @bookings.each do |booking|%>
-<%= booking.status%>
-<%= booking.start_date%>
-<%= booking.end_date%>
-<%end%>
-
-<%= link_to "Update your booking", edit_booking_path(@bookings), class: "btn btn-primary mx-4"%>
+<h1 class="m-4">Vos réservations </h1>
+<% if @bookings == [] %>
+  <p>Vous n'avez pas encore fait de réservation !
+  <%= link_to "Trouvez maintenant des amis parfaits pour vous", friends_path %></p>
+<% end %>
+<div class="container">
+  <% @bookings.each do |booking|%>
+  <%= render "shared/booking_card", booking: booking %>
+  <%end%>
+</div>
+<% if @requests != [] %>
+  <h2 class="m-4">Vos demandes de réservation</h2>
+  <% @requests.each do |request|%>
+    <%= render "shared/request_card", request: request %>
+  <%end%>
+<% end %>
