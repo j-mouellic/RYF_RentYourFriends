@@ -1,19 +1,105 @@
-<div class= "card col-4 d-flex p-1">
-  <%= image_tag friend.picture , class: "home-avatar"%>
-  <p><%= friend.name %></p>
-  <p><%= friend.price %>€/jour</p>
-  <% qualities = [] %>
-  <% qualities.push "drôle" if friend.quality_funny%>
-  <% qualities.push "fiable" if friend.quality_reliable%>
-  <% qualities.push "honnête" if friend.quality_honest%>
-  <% qualities.push "Stylé" if friend.quality_good_looking%>
-  <% qualities.push "Plein de courage" if friend.quality_brave%>
-  <% 3.times do %>
-    <% if qualities.any? %>
-      <% quality = qualities.sample %>
-      <li><%= quality %></li>
-      <% qualities.delete(quality) %>
-    <% end %>
-  <% end %>
-  <%= link_to "voir plus", friend_path(friend) %>
+<div class= "card-home">
+  <div class="friend align-items-center">
+      <p><%= friend.name.capitalize %></p>
+    <div class="name-qualities d-flex">
+      <%= image_tag friend.picture , class: "home-avatar"%>
+      <div class="friend-qualities-card">
+        <% qualities = [] %>
+        <% if friend.genre == "man" %>
+          <% qualities.push "drôle" if friend.quality_funny%>
+          <% qualities.push "fiable" if friend.quality_reliable%>
+          <% qualities.push "honnête" if friend.quality_honest%>
+          <% qualities.push "Stylé" if friend.quality_good_looking%>
+          <% qualities.push "Courageux" if friend.quality_brave%>
+          <% 3.times do %>
+            <% if qualities.any? %>
+              <% quality = qualities.sample %>
+              <p><%= quality.capitalize %></p>
+              <% qualities.delete(quality) %>
+            <% end %>
+          <% end %>
+        <% else %>
+          <% qualities.push "drôle" if friend.quality_funny%>
+          <% qualities.push "fiable" if friend.quality_reliable%>
+          <% qualities.push "honnête" if friend.quality_honest%>
+          <% qualities.push "Stylée" if friend.quality_good_looking%>
+          <% qualities.push "Courageuse" if friend.quality_brave%>
+          <% 3.times do %>
+            <% if qualities.any? %>
+              <% quality = qualities.sample %>
+              <p><%= quality.capitalize %></p>
+              <% qualities.delete(quality) %>
+            <% end %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="friend-bottom d-flex justify-content-between">
+    <div class="friend-activities grid">
+        <% if friend.activity_wedding? %>
+          <i class="fa-solid fa-ring" style="color: violet"></i>
+        <% end %>
+
+        <% if friend.activity_sam? %>
+          <i class="fa-solid fa-car" style="color: violet"></i>
+        <% end %>
+
+        <% if friend.activity_diner? %>
+          <i class="fa-solid fa-utensils" style="color: violet"></i>
+        <% end %>
+
+        <% if friend.activity_birthday? %>
+          <i class="fa-solid fa-cake-candles" style="color: violet"></i>
+        <% end %>
+
+        <% if friend.activity_bowling? %>
+          <i class="fa-solid fa-bowling-ball" style="color: violet"></i>
+        <% end %>
+
+        <% if friend.activity_hike? %>
+          <i class="fa-solid fa-person-hiking" style="color: violet"></i>
+        <% end %>
+
+        <% if friend.activity_movie? %>
+          <i class="fa-solid fa-film" style="color: violet"></i>
+        <% end %>
+
+        <% if friend.activity_picnic? %>
+          <i class="fa-solid fa-campground" style="color: violet"></i>
+        <% end %>
+
+        <% if friend.activity_concert? %>
+          <i class="fa-solid fa-guitar" style="color: violet"></i>
+        <% end %>
+
+        <% if friend.activity_karaoke? %>
+          <i class="fa-solid fa-music" style="color: violet"></i>
+        <% end %>
+
+        <% if friend.activity_shopping? %>
+          <i class="fa-solid fa-bag-shopping" style="color: violet"></i>
+        <% end %>
+
+        <% if friend.activity_sport? %>
+          <i class="fa-solid fa-dumbbell" style="color: violet"></i>
+        <% end %>
+
+        <% if friend.activity_barbecue? %>
+          <i class="fa-solid fa-fire-burner" style="color: violet"></i>
+        <% end %>
+
+        <% if friend.activity_camping? %>
+          <i class="fa-solid fa-caravan" style="color: violet"></i>
+        <% end %>
+
+        <% if friend.activity_paintball? %>
+          <i class="fa-solid fa-gun" style="color: violet"></i>
+        <% end %>
+    </div>
+    <div class="friend-price">
+      <p><%= friend.price %>€/jour</p>
+      <%= link_to "Réserver", friend_path(friend) %>
+    </div>
+  </div>
 </div>
