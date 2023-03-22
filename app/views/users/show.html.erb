@@ -1,17 +1,36 @@
-  <h1 class="m-3">Mon compte</h1>
-<div class="container mb-4">
-  <div class="d-flex justify-content-between">
-    <div class="account-card">
-      <p>Détails</p>
-      <%= @user.pseudo %>
-    </div>
-    <div class="account-card">
-      <p>Mes réservations</p>
-      <%= @user.bookings %>
-    </div>
-    <div class="account-card">
-      <p>Mes amis à louer</p>
-      <%= @user.friends %>
-    </div>
+<h1 class="m-3">Mon compte</h1>
+<div class="container-user-account">
+  <div class="account-card">
+    <p>Détails</p>
+    <%= @user.pseudo %>
+  </div>
+  <div class="account-card">
+    <p>Mes réservations</p>
+    <% if @bookings.count > 0 %>
+      <% @bookings.each do |booking| %>
+
+        <%= booking.friend.name %>
+      <% end %>
+    <% else %>
+      <p>Vous n'avez aucune réservation</p>
+    <% end %>
+  </div>
+  <div class="account-card">
+    <p>Mes amis à louer</p>
+    <% if @friends.count > 0 %>
+        <div class="account-grid">
+          <% @friends.each do |friend| %>
+            <%= link_to friend_path(friend) do %>
+              <div class="card-user-account">
+                <% link_to "", friends_path(friend.id) %>
+                <%= image_tag  friend.picture %>
+                <%= friend.name.capitalize %>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+    <% else %>
+      <p>Vous n'avez aucun amis en location</p>
+    <% end %>
   </div>
 </div>
