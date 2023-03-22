@@ -154,7 +154,7 @@
 </section>
 
 
- <section class="card-booking">
+<section data-controller="show-price" class="card-booking" data-show-price-prixTotal-value="<%=@friend.price%>">
       <div class="price-user">
         <p><strong><%= @friend.price %>€</strong> par jour</p>
         <div class="reviews">
@@ -163,12 +163,19 @@
         </div>
       </div>
       <div class="formulaire">
-        <%= simple_form_for ([@friend, Booking.new]) do |f| %>
-          <%= f.input :start_date, required: true, label: "Début", as: :string, input_html: { data: { controller: "datepicker" } }%>
-          <%= f.input :end_date, required: true, label: "Fin", as: :string, input_html: { data: { controller: "datepicker" } } %>
+        <%= simple_form_for [@friend, Booking.new], html:{data:{action:"submit->show-price#calculate"}} do |f| %>
+          <%= f.input :start_date, required: true, label: "Début", as: :string, input_html: { data: { controller: "datepicker", action:"change->show-price#calculate", show_price_target:"dateDebut" } }%>
+          <%= f.input :end_date, required: true, label: "Fin", as: :string, input_html: { data: { controller: "datepicker", action:"change->show-price#calculate", show_price_target:"dateFin" } } %>
           <%= f.submit "Réserver", class: "button-primary-large" %>
+          </div>
         <% end %>
       </div>
-      <div class="price-total"></div>
+      <div class="price-total">
+        <p> <strong> Total jours </strong> </p>
+        <p id="resultjours"> </p>
+        <p> <strong> Prix total en euros :</strong> </p>
+        <p id="resultprix"> </p>
+
+      </div>
   </section>
 </section>
