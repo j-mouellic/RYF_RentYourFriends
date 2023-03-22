@@ -111,5 +111,19 @@ a{
 .reviews{
   display: flex;
   justify-content: space-between;
+
+ }
+
+.card-category {
+  background-size: cover;
+  background-position: center;
+  height: 180px;
+  display: flex;
+  justify-content: start;
   align-items: center;
+}
+
+.home-avatar {
+  width: 40px;
+  border-radius: 50%;
 }

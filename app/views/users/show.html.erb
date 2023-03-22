@@ -1,0 +1,17 @@
+  <h1 class="m-3">Mon compte</h1>
+<div class="container mb-4">
+  <div class="d-flex justify-content-between">
+    <div class="account-card">
+      <p>Détails</p>
+      <%= @user.pseudo %>
+    </div>
+    <div class="account-card">
+      <p>Mes réservations</p>
+      <%= @user.bookings %>
+    </div>
+    <div class="account-card">
+      <p>Mes amis à louer</p>
+      <%= @user.friends %>
+    </div>
+  </div>
+</div>
