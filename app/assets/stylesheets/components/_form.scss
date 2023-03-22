@@ -1,0 +1,15 @@
+.wrapper{
+  width: 500px;
+  margin: 50px auto;
+  background-color: rgb(243, 244, 245);
+  padding: 32px;
+  border-radius: 12px;
+  box-shadow: 2px 2px 5px rgba($color: #000000, $alpha: 0.5),
+  -2px -2px 5px rgba($color: #afa8a8, $alpha: 0.5);
+}
+
+.btn-bottom{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

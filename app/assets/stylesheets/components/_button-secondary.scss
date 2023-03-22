@@ -1,0 +1,13 @@
+.button-secondary{
+  padding: 8px 16px;
+  background-color: rgb(117, 122, 128);
+  border-radius: 16px;
+  color: white;
+  transition: ease 0.3s;
+}
+
+.button-secondary:hover{
+  background-color: rgb(43, 44, 44);
+  color: white;
+  transition: ease 0.3s;
+}
