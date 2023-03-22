@@ -1,7 +1,7 @@
 <div class="card-category mb-4" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://img.freepik.com/photos-gratuite/jeunes-amis-au-sommet-montagne-profitant-vue-fascinante_181624-30260.jpg?w=2000&t=st=1679419524~exp=1679420124~hmac=ea194c3304a747df6b352ae4d1c34fa4f526ee459cf3331321a29009231a38fb)">
 <h1 class="m-2">Un nouvel ami t'attend !</h1>
 </div>
-<div class="container m-1">
+<div id="wrapper-friends">
   <div class="grid-friends">
     <% @friends.each do |friend| %>
       <%= render "shared/friend_card", friend: friend %>
