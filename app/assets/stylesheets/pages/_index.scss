@@ -1,51 +1,133 @@
 // Import page-specific CSS files here.
 @import "home";
 
-.container {
-  margin-top: 48px;
+// ------------------------ CONTAINERS ----------------------
+
+a{
+  text-decoration: none;
+  display: block;
+}
+
+.container-show {
+  width: 1240px;
+  margin: 0 auto;
+  padding: 40px 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+.card-booking,
+.card-user,
+.card-informations{
+  width: 350px;
+}
+
+.card-booking:hover,
+.card-user:hover,
+.card-informations:hover{
+  box-shadow: 0 8px 32px 0 rgba(34, 36, 56, 0.37);
+}
+
+.card-user{
+  padding: 16px;
+  display: flex;
+  justify-content: stretch;
+  background-color: rgb(244, 245, 247);
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 2px 2px 5px rgba($color: #000000, $alpha: 0.2),
+  -2px -2px 5px rgba($color: #afa8a8, $alpha: 0.2);
+}
+
+.card-informations{
+  padding: 24px;
+  border-radius: 12px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: white;
+  box-shadow: 2px 2px 5px rgba($color: #000000, $alpha: 0.2),
+  -2px -2px 5px rgba($color: #afa8a8, $alpha: 0.2);
+}
+
+.card-booking{
+  width: 350px;
+  padding: 16px;
+  background-color: rgb(244, 245, 247);
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 2px 2px 5px rgba($color: #000000, $alpha: 0.2),
+  -2px -2px 5px rgba($color: #afa8a8, $alpha: 0.2);
+}
+
+
+// ------------------------ USER activites, defaults, qualities ----------------------
+.card-informations h3{
+  margin-bottom: 8px;
+}
+.img-profile img {
+  width: 80%;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
+  margin-bottom: 16px;
+  filter: contrast(5px);
+}
+
+.friend-activities,
+.friend-defaults{
+  margin-bottom: 32px;
+}
+
+.grid-activities{
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  width: 100%;
+
+}
+
+=======
+  font-size: 1.5em;
+  font-weight: 100;
+}
+
+.friend-defaults p{
+  display: inline-block;
+  padding: 8px 16px;
+  width: fit-content;
+  color: white;
+  background-color: #b90b0b;
+  border-radius: 50px;
+}
+
+.friend-qualities p{
+  display: inline-block;
+  padding: 8px 16px;
+  color: white;
+  background-color: #079602;
+  border-radius: 50px;
+}
+
+
+//  -------------------------------- CARD BOOKING ------------------------------
+.price-user,
+.reviews{
   display: flex;
   justify-content: space-between;
-  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
-}
 
-#booking-new {
-  padding: 24px;
-  border: 1px solid rgb(221, 221, 221);
-  background-color: white;
-  border-radius: 12px;
-  box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
-  box-sizing: border-box;
-}
-
-.img-profile {
-  border-radius: 10px;
-  box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
-  size-adjust: 20%;
-}
-
-.col-9 {
-  border: 1px solid rgb(221, 221, 221);
-  background-color: white;
-  border-radius: 12px;
-  box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
-  box-sizing: border-box;
-}
-
-.user-information {
-  width: 100%;
-}
-
+ }
+ 
 .card-category {
   background-size: cover;
   background-position: center;
   height: 180px;
   display: flex;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
-  color: white;
-  font-size: 30px;
-  font-weight: bold;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  border-radius: 5px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.home-avatar {
+  width: 40px;
+  border-radius: 50%;
 }

@@ -1,0 +1,17 @@
+<div class="card d-flex">
+  </p>Demande de réservation pour
+    <%= request.friend.name.capitalize %>!
+  <p>
+  </p>Effectuée par
+    <%= request.user.first_name %>
+  <p>
+  <p>Statut :
+  <%# ajouter un dropdown menu ici pour changer le statut %>
+    <%= request.status%>
+  </p>
+  <% if request.start_date == request.end_date %>
+    <%= "Le #{request.start_date}" %>
+  <% else %>
+    <%= "Du #{request.start_date} au #{request.end_date}"%>
+  <% end %>
+</div>

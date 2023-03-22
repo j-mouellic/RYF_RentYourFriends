@@ -1,91 +1,175 @@
-<div class="container">
-  <div class="user-information">
-    <div class= "d-flex justify-content align-items-center">
-      <div class="img-profile">
-        <%= image_tag  @friend.picture %>
-      </div>
-      <h1><strong> Rencontre <%= @friend.name %> !</strong></h1>
-    <div class="row">
-      <div class="col-9 bg-grey">
-        <h2> <strong> Activités proposées :</strong></h2>
-        <p>disponible pour : </p>
-        <li><%= @friend.activity_wedding %> </li>
+<section class="container-show">
+  <section class="card-user">
+    <div class="img-profile">
+      <%= image_tag  @friend.picture %>
+      <h1><strong> Rencontre <%= @friend.name %></strong></h1>
+      <p>Je loue Bob car il dévalise mon frigo depuis plus de 2 ans. Évitez le restaurant avec lui et les apéros car il devient
+      complotiste après 3 verres. Bob sera parfait dans vos moments de déprimes pour vous faire rire !
+      </p>
+    </div>
+  </section>
+
+  <section class="card-informations">
+    <div class="friend-activities">
+      <h3>Disponible pour</h3>
+      <div class="grid-activities" >
+        <% if @friend.activity_wedding? %>
+          <i class="fa-solid fa-ring" style="color: green;"></i>
+        <% else %>
+          <i class="fa-solid fa-ring" style="color: grey;"></i>
+        <% end %>
+
+        <% if @friend.activity_sam? %>
+          <i class="fa-solid fa-car" style="color: green;"></i>
+        <% else %>
+          <i class="fa-solid fa-car" style="color: grey;"></i>
+        <% end %>
+
+        <% if @friend.activity_diner? %>
+          <i class="fa-solid fa-utensils" style="color: green;"></i>
+        <% else %>
+          <i class="fa-solid fa-utensils" style="color: grey;"></i>
+        <% end %>
+
+        <% if @friend.activity_birthday? %>
+          <i class="fa-solid fa-cake-candles" style="color: green;"></i>
+        <% else %>
+          <i class="fa-solid fa-cake-candles" style="color: grey;"></i>
+        <% end %>
+
+        <% if @friend.activity_bowling? %>
+          <i class="fa-solid fa-bowling-ball" style="color: green;"></i>
+        <% else %>
+          <i class="fa-solid fa-bowling-ball" style="color: grey;"></i>
+        <% end %>
+
+        <% if @friend.activity_hike? %>
+          <i class="fa-solid fa-person-hiking" style="color: green;"></i>
+        <% else %>
+          <i class="fa-solid fa-person-hiking" style="color: grey;"></i>
+        <% end %>
+
+        <% if @friend.activity_movie? %>
+          <i class="fa-solid fa-film" style="color: green;"></i>
+        <% else %>
+          <i class="fa-solid fa-film" style="color: grey;"></i>
+        <% end %>
+
+        <% if @friend.activity_picnic? %>
+          <i class="fa-solid fa-campground" style="color: green;"></i>
+        <% else %>
+          <i class="fa-solid fa-campground" style="color: grey;"></i>
+        <% end %>
+
+        <% if @friend.activity_concert? %>
+          <i class="fa-solid fa-guitar" style="color: green;"></i>
+        <% else %>
+          <i class="fa-solid fa-guitar" style="color: grey;"></i>
+        <% end %>
+
+        <% if @friend.activity_karaoke? %>
+          <i class="fa-solid fa-music" style="color: green;"></i>
+        <% else %>
+          <i class="fa-solid fa-music" style="color: grey;"></i>
+        <% end %>
+
+        <% if @friend.activity_shopping? %>
+          <i class="fa-solid fa-bag-shopping" style="color: green;"></i>
+        <% else %>
+          <i class="fa-solid fa-bag-shopping" style="color: grey;"></i>
+        <% end %>
+
+        <% if @friend.activity_sport? %>
+          <i class="fa-solid fa-dumbbell" style="color: green;"></i>
+        <% else %>
+          <i class="fa-solid fa-dumbbell" style="color: grey;"></i>
+        <% end %>
+
+        <% if @friend.activity_barbecue? %>
+          <i class="fa-solid fa-fire-burner" style="color: green;"></i>
+        <% else %>
+          <i class="fa-solid fa-fire-burner" style="color: grey;"></i>
+        <% end %>
+
+        <% if @friend.activity_camping? %>
+          <i class="fa-solid fa-caravan" style="color: green;"></i>
+        <% else %>
+          <i class="fa-solid fa-caravan" style="color: grey;"></i>
+        <% end %>
+
+        <% if @friend.activity_paintball? %>
+          <i class="fa-solid fa-gun" style="color: green;"></i>
+        <% else %>
+          <i class="fa-solid fa-gun" style="color: grey;"></i>
+        <% end %>
       </div>
     </div>
-    </div>
-  </div>
+    <div class="friend-qualities">
+      <h3><%= @friend.name.capitalize %> est très</h3>
+      <div>
+        <% if @friend.quality_funny? %>
+          <p>Drôle</p>
+        <% end %>
 
-  <div id="booking-new">
-    <%= simple_form_for ([@friend, Booking.new]) do |f| %>
-      <%= f.input :start_date, required: true, locale: 'fr', format: 'dd/mm/yyyy', label: "Début", as: :string, input_html: { data: { controller: "datepicker" } }%>
-      <%= f.input :end_date, required: true, locale: 'fr', format: 'dd/mm/yyyy', label: "Fin", as: :string, input_html: { data: { controller: "datepicker" } } %>
-      <%= f.submit "Réserver" %>
+        <% if @friend.quality_reliable? %>
+          <p>Fiable</p>
+        <% end %>
 
-      <p> <br> <%= @friend.price%> euros / jour</p>
-      <%# <% @bookings = Booking.where(user_id: current_user.id)%>
-      <%# <% (@friend.end_date) - (@friend.start_date)%>
-      <%# <%= (Date.parse(params[@friend][:end_date]).to_i / 86_400) %>
+        <% if @friend.quality_honest? %>
+          <p>Honnête</p>
+        <% end %>
+
+        <% if @friend.quality_good_looking? %>
+          <p>Stylé</p>
+        <% end %>
+
+        <% if @friend.quality_brave? %>
+          <p>Courageux</p>
+        <% end %>
       </div>
-    <% end %>
-  </div>
-</div>
+    </div>
+    <div class="friend-defaults">
+      <h3>Mais aussi très</h3>
+      <div>
+        <% if @friend.default_complotist? %>
+          <p>Complotiste</p>
+        <% end %>
 
-<% if @friend.activity_wedding? %>
-  <p class="activity">Mariage</p>
-<% end %>
+        <% if @friend.default_impatient? %>
+          <p>Impatient</p>
+        <% end %>
 
-<% if @friend.activity_diner? %>
-  <p class="activity">Diner</p>
-<% end %>
+        <% if @friend.default_disorganized? %>
+          <p>Bordelique</p>
+        <% end %>
 
-<% if @friend.activity_birthday? %>
-  <p class="activity">Anniversaire</p>
-<% end %>
+        <% if @friend.default_cheap? %>
+          <p>Radin</p>
+        <% end %>
 
-<% if @friend.activity_bowling? %>
-  <p class="activity">Bowling</p>
-<% end %>
+        <% if @friend.default_arrogant? %>
+          <p>Arrogant</p>
+        <% end %>
+      </div>
+    </div>
+</section>
 
-<% if @friend.activity_hike? %>
-  <p class="activity">Randonnée</p>
-<% end %>
 
-<% if @friend.activity_bowling? %>
-  <p class="activity">Bowling</p>
-<% end %>
-
-<% if @friend.activity_movie? %>
-  <p class="activity">Movie</p>
-<% end %>
-
-<% if @friend.activity_picnic? %>
-  <p class="activity">Bowling</p>
-<% end %>
-
-<% if @friend.activity_concert? %>
-  <p class="activity">concert</p>
-<% end %>
-
-<% if @friend.activity_karaoke? %>
-  <p class="activity">Karaoke</p>
-<% end %>
-
-<% if @friend.activity_shopping? %>
-  <p class="activity">Shopping</p>
-<% end %>
-
-<% if @friend.activity_sport? %>
-  <p class="activity">Sport</p>
-<% end %>
-
-<% if @friend.activity_barbecue? %>
-  <p class="activity">Barbecue</p>
-<% end %>
-
-<% if @friend.activity_camping? %>
-  <p class="activity">Camping</p>
-<% end %>
-
-<% if @friend.activity_paintball? %>
-  <p class="activity">Paintball</p>
-<% end %>
+ <section class="card-booking">
+      <div class="price-user">
+        <p><strong><%= @friend.price %>€</strong> par jour</p>
+        <div class="reviews">
+          <p>4.5</p>
+          <p>reviews</p>
+        </div>
+      </div>
+      <div class="formulaire">
+        <%= simple_form_for ([@friend, Booking.new]) do |f| %>
+          <%= f.input :start_date, required: true, label: "Début", as: :string, input_html: { data: { controller: "datepicker" } }%>
+          <%= f.input :end_date, required: true, label: "Fin", as: :string, input_html: { data: { controller: "datepicker" } } %>
+          <%= f.submit "Réserver", class: "button-primary-large" %>
+        <% end %>
+      </div>
+      <div class="price-total"></div>
+  </section>
+</section>
