@@ -36,7 +36,7 @@
     </div>
   </div>
   <div class="friend-bottom d-flex justify-content-between">
-    <div class="friend-activities grid">
+    <div class="friend-activities-grid">
         <% if friend.activity_wedding? %>
           <i class="fa-solid fa-ring" style="color: violet"></i>
         <% end %>
@@ -99,7 +99,7 @@
     </div>
     <div class="friend-price">
       <p><%= friend.price %>€/jour</p>
-      <%= link_to "Réserver", friend_path(friend) %>
+      <%= link_to "Réserver", friend_path(friend), class: "button-primary" %>
     </div>
   </div>
 </div>
