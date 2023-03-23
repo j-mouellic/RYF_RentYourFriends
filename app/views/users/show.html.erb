@@ -1,21 +1,26 @@
-<h1 class="m-3">Mon compte</h1>
+<h1 class="m-3" id="titre">Mon compte  &ensp; <i class="fa-solid fa-user" style="color: #727584;"></i></h1>
 <div class="container-user-account">
-  <div class="account-card">
-    <p>Détails</p>
+  <div class="account-card" id="details">
+    <p>Détails:</p>
+    <br>
     <%= @user.pseudo %>
+    <%= @user.first_name %>
+    <%= @user.last_name %>
+    <%= @user.date_of_birth%>
   </div>
-  <div class="account-card">
-    <p>Mes réservations</p>
+
+  <div class="account-card" id="mesreservations">
+    <p>Mes réservations:</p>
+    <br>
     <% if @bookings.count > 0 %>
       <% @bookings.each do |booking| %>
-
         <%= booking.friend.name %>
       <% end %>
     <% else %>
       <p>Vous n'avez aucune réservation</p>
     <% end %>
   </div>
-  <div class="account-card">
+  <div class="account-card" id="amis">
     <p>Mes amis à louer</p>
     <% if @friends.count > 0 %>
         <div class="account-grid">
