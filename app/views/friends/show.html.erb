@@ -1,10 +1,9 @@
 <section class="container-show">
   <section class="card-user-left">
     <div class="img-profile">
-      <%= image_tag  @friend.photo %>
+      <%= cl_image_tag  @friend.photo.key %>
       <h1><strong> Rencontre <%= @friend.name %></strong></h1>
       <p> <%= @friend.description %> </p>
-
     </div>
   </section>
 
@@ -163,11 +162,10 @@
         </div>
       </div>
       <div class="formulaire">
-        <%= simple_form_for [@friend, Booking.new], html:{data:{action:"submit->show-price#calculate"}} do |f| %>
-          <%= f.input :start_date, required: true, label: "Début", as: :string, input_html: { data: { controller: "datepicker", action:"change->show-price#calculate", show_price_target:"dateDebut", locale: "fr"} }%>
+        <%= simple_form_for [@friend, @booking] do |f| %>
+          <%= f.input :start_date, required: true, label: "Début", as: :string, input_html: { data: { controller: "datepicker", action:"change->show-price#calculate", show_price_target:"dateDebut"} } %>
           <%= f.input :end_date, required: true, label: "Fin", as: :string, input_html: { data: { controller: "datepicker", action:"change->show-price#calculate", show_price_target:"dateFin" } } %>
-          <%= f.submit "Réserver", class: "button-primary-large" %>
-          </div>
+          <%= f.submit "Réserver", class: "button-primary-large", html:{data:{action:"submit->show-price#calculate"}} %>
         <% end %>
       </div>
       <div class="price-element">
