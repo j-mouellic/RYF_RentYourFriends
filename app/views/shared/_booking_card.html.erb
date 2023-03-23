@@ -11,8 +11,8 @@
     <%= "Du #{booking.start_date} au #{booking.end_date}"%>
   <% end %>
   <%= booking.total_price %>
-  <% if booking.status == "pending" %>
-    <%= link_to "Notez votre expérience !", new_friend_booking_review_path(booking.friend, booking), class: "btn btn-light" %>
+  <% if booking.status == "finished" %>
+    <%= link_to "Notez votre expérience !", new_booking_review_path(booking), class: "btn btn-light" %>
   <% else %>
     <%= link_to "modifier votre réservation", edit_booking_path(booking), class: "btn btn-light" %>
   <% end %>

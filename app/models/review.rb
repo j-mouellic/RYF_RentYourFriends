@@ -5,6 +5,4 @@ class Review < ApplicationRecord
 
   validates :review_content, presence: true
   validates :review_rating, inclusion: { in: AUTHORIZED_RATINGS }
-  validates :user_id, uniqueness: true
-  validates :booking_id, uniqueness: true
 end

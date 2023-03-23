@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
   def new
-    @friend = Friend.find(params[:friend_id])
+    # @friend = Friend.find(params[:friend_id])
     @booking = Booking.find(params[:booking_id])
     @review = Review.new
   end
@@ -13,7 +13,7 @@ class ReviewsController < ApplicationController
     if @review.save
       redirect_to bookings_path, notice: "Votre avis a été pris en compte"
     else
-      render :new, notice: "Impossible d'enregistrer votre avis"
+      render :new, status: :unprocessable_entity, notice: "Impossible d'enregistrer votre avis"
     end
   end
 
