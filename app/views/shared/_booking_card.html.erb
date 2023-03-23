@@ -12,7 +12,7 @@
   <% end %>
   <%= booking.total_price %>
   <% if booking.status == "finished" %>
-    <%# ajouter du js pour déplier de quoi mettre une review? %>
+    <%= link_to "Notez votre expérience !", new_booking_review_path(booking), class: "btn btn-light" %>
   <% else %>
     <%= link_to "modifier votre réservation", edit_booking_path(booking), class: "btn btn-light" %>
   <% end %>

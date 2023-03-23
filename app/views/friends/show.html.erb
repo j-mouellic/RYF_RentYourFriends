@@ -1,106 +1,105 @@
 <section class="container-show">
-  <section class="card-user">
+  <section class="card-user-left">
     <div class="img-profile">
       <%= image_tag  @friend.picture %>
       <h1><strong> Rencontre <%= @friend.name %></strong></h1>
-      <p>Je loue Bob car il dévalise mon frigo depuis plus de 2 ans. Évitez le restaurant avec lui et les apéros car il devient
-      complotiste après 3 verres. Bob sera parfait dans vos moments de déprimes pour vous faire rire !
-      </p>
+      <p> <%= @friend.description %> </p>
+
     </div>
   </section>
 
-  <section class="card-informations">
+<section class="card-informations">
     <div class="friend-activities">
       <h3>Disponible pour</h3>
       <div class="grid-activities" >
         <% if @friend.activity_wedding? %>
-          <i class="fa-solid fa-ring" style="color: green;"></i>
+          <i class="fa-solid fa-ring" style="color: violet;"></i>
         <% else %>
-          <i class="fa-solid fa-ring" style="color: grey;"></i>
+          <i class="fa-solid fa-ring" style="color: rgba(0, 0, 0, 0.1);"></i>
         <% end %>
 
         <% if @friend.activity_sam? %>
-          <i class="fa-solid fa-car" style="color: green;"></i>
+          <i class="fa-solid fa-car" style="color: violet;"></i>
         <% else %>
-          <i class="fa-solid fa-car" style="color: grey;"></i>
+          <i class="fa-solid fa-car" style="color: rgba(0, 0, 0, 0.1);"></i>
         <% end %>
 
         <% if @friend.activity_diner? %>
-          <i class="fa-solid fa-utensils" style="color: green;"></i>
+          <i class="fa-solid fa-utensils" style="color: violet;"></i>
         <% else %>
-          <i class="fa-solid fa-utensils" style="color: grey;"></i>
+          <i class="fa-solid fa-utensils" style="color: rgba(0, 0, 0, 0.1);"></i>
         <% end %>
 
         <% if @friend.activity_birthday? %>
-          <i class="fa-solid fa-cake-candles" style="color: green;"></i>
+          <i class="fa-solid fa-cake-candles" style="color: violet;"></i>
         <% else %>
-          <i class="fa-solid fa-cake-candles" style="color: grey;"></i>
+          <i class="fa-solid fa-cake-candles" style="color: rgba(0, 0, 0, 0.1);"></i>
         <% end %>
 
         <% if @friend.activity_bowling? %>
-          <i class="fa-solid fa-bowling-ball" style="color: green;"></i>
+          <i class="fa-solid fa-bowling-ball" style="color: violet;"></i>
         <% else %>
-          <i class="fa-solid fa-bowling-ball" style="color: grey;"></i>
+          <i class="fa-solid fa-bowling-ball" style="color: rgba(0, 0, 0, 0.1);"></i>
         <% end %>
 
         <% if @friend.activity_hike? %>
-          <i class="fa-solid fa-person-hiking" style="color: green;"></i>
+          <i class="fa-solid fa-person-hiking" style="color: violet;"></i>
         <% else %>
-          <i class="fa-solid fa-person-hiking" style="color: grey;"></i>
+          <i class="fa-solid fa-person-hiking" style="color: rgba(0, 0, 0, 0.1);"></i>
         <% end %>
 
         <% if @friend.activity_movie? %>
-          <i class="fa-solid fa-film" style="color: green;"></i>
+          <i class="fa-solid fa-film" style="color: violet;"></i>
         <% else %>
-          <i class="fa-solid fa-film" style="color: grey;"></i>
+          <i class="fa-solid fa-film" style="color: rgba(0, 0, 0, 0.1);"></i>
         <% end %>
 
         <% if @friend.activity_picnic? %>
-          <i class="fa-solid fa-campground" style="color: green;"></i>
+          <i class="fa-solid fa-campground" style="color: violet;"></i>
         <% else %>
-          <i class="fa-solid fa-campground" style="color: grey;"></i>
+          <i class="fa-solid fa-campground" style="color: rgba(0, 0, 0, 0.1);"></i>
         <% end %>
 
         <% if @friend.activity_concert? %>
-          <i class="fa-solid fa-guitar" style="color: green;"></i>
+          <i class="fa-solid fa-guitar" style="color: violet;"></i>
         <% else %>
-          <i class="fa-solid fa-guitar" style="color: grey;"></i>
+          <i class="fa-solid fa-guitar" style="color: rgba(0, 0, 0, 0.1);"></i>
         <% end %>
 
         <% if @friend.activity_karaoke? %>
-          <i class="fa-solid fa-music" style="color: green;"></i>
+          <i class="fa-solid fa-music" style="color: violet;"></i>
         <% else %>
-          <i class="fa-solid fa-music" style="color: grey;"></i>
+          <i class="fa-solid fa-music" style="color: rgba(0, 0, 0, 0.1);"></i>
         <% end %>
 
         <% if @friend.activity_shopping? %>
-          <i class="fa-solid fa-bag-shopping" style="color: green;"></i>
+          <i class="fa-solid fa-bag-shopping" style="color: violet;"></i>
         <% else %>
-          <i class="fa-solid fa-bag-shopping" style="color: grey;"></i>
+          <i class="fa-solid fa-bag-shopping" style="color: rgba(0, 0, 0, 0.1);"></i>
         <% end %>
 
         <% if @friend.activity_sport? %>
-          <i class="fa-solid fa-dumbbell" style="color: green;"></i>
+          <i class="fa-solid fa-dumbbell" style="color: violet;"></i>
         <% else %>
-          <i class="fa-solid fa-dumbbell" style="color: grey;"></i>
+          <i class="fa-solid fa-dumbbell" style="color: rgba(0, 0, 0, 0.1);"></i>
         <% end %>
 
         <% if @friend.activity_barbecue? %>
-          <i class="fa-solid fa-fire-burner" style="color: green;"></i>
+          <i class="fa-solid fa-fire-burner" style="color: violet;"></i>
         <% else %>
-          <i class="fa-solid fa-fire-burner" style="color: grey;"></i>
+          <i class="fa-solid fa-fire-burner" style="color: rgba(0, 0, 0, 0.1);"></i>
         <% end %>
 
         <% if @friend.activity_camping? %>
-          <i class="fa-solid fa-caravan" style="color: green;"></i>
+          <i class="fa-solid fa-caravan" style="color: violet;"></i>
         <% else %>
-          <i class="fa-solid fa-caravan" style="color: grey;"></i>
+          <i class="fa-solid fa-caravan" style="color: rgba(0, 0, 0, 0.1);"></i>
         <% end %>
 
         <% if @friend.activity_paintball? %>
-          <i class="fa-solid fa-gun" style="color: green;"></i>
+          <i class="fa-solid fa-gun" style="color: violet;"></i>
         <% else %>
-          <i class="fa-solid fa-gun" style="color: grey;"></i>
+          <i class="fa-solid fa-gun" style="color: rgba(0, 0, 0, 0.1);"></i>
         <% end %>
       </div>
     </div>
@@ -132,30 +131,30 @@
       <h3>Mais aussi très</h3>
       <div>
         <% if @friend.default_complotist? %>
-          <p>Complotiste</p>
+          <p class="default" >Complotiste</p>
         <% end %>
 
         <% if @friend.default_impatient? %>
-          <p>Impatient</p>
+          <p class="default">Impatient</p>
         <% end %>
 
         <% if @friend.default_disorganized? %>
-          <p>Bordelique</p>
+          <p class="default">Bordelique</p>
         <% end %>
 
         <% if @friend.default_cheap? %>
-          <p>Radin</p>
+          <p class="default">Radin</p>
         <% end %>
 
         <% if @friend.default_arrogant? %>
-          <p>Arrogant</p>
+          <p class="default">Arrogant</p>
         <% end %>
       </div>
     </div>
 </section>
 
 
- <section class="card-booking">
+<section data-controller="show-price" class="card-booking-right" data-show-price-prixTotal-value="<%=@friend.price%>">
       <div class="price-user">
         <p><strong><%= @friend.price %>€</strong> par jour</p>
         <div class="reviews">
@@ -164,12 +163,31 @@
         </div>
       </div>
       <div class="formulaire">
-        <%= simple_form_for ([@friend, Booking.new]) do |f| %>
-          <%= f.input :start_date, required: true, label: "Début", as: :string, input_html: { data: { controller: "datepicker" } }%>
-          <%= f.input :end_date, required: true, label: "Fin", as: :string, input_html: { data: { controller: "datepicker" } } %>
+        <%= simple_form_for [@friend, Booking.new], html:{data:{action:"submit->show-price#calculate"}} do |f| %>
+          <%= f.input :start_date, required: true, label: "Début", as: :string, input_html: { data: { controller: "datepicker", action:"change->show-price#calculate", show_price_target:"dateDebut", locale: "fr"} }%>
+          <%= f.input :end_date, required: true, label: "Fin", as: :string, input_html: { data: { controller: "datepicker", action:"change->show-price#calculate", show_price_target:"dateFin" } } %>
           <%= f.submit "Réserver", class: "button-primary-large" %>
+          </div>
         <% end %>
       </div>
-      <div class="price-total"></div>
+      <div class="price-element">
+        <div class="label-price">
+          <p>Total jours :</p>
+          <p id="resultjours"> </p>
+        </div>
+        <div class="label-price">
+          <p>Nettoyage :</p>
+          <p>20€</p>
+        </div>
+        <div class="label-price">
+          <p>Remise Défauts :</p>
+          <p id="default-numb"></p>
+          <p id="remise"></p>
+        </div>
+      </div>
+        <div class="label-price">
+          <p> <strong> Prix total :</strong> </p>
+          <p id="resultprix"></p>
+        </div>
   </section>
 </section>

@@ -8,9 +8,9 @@ Rails.application.routes.draw do
   # root "articles#index"
   resources :users, :only => [:show]
   resources :friends, only: [:show, :index] do
-    resources :bookings, only: [:new, :create] do
-      resources :reviews, only: [:new, :create]
-    end
+    resources :bookings, only: [:new, :create]
   end
-  resources :bookings, only: [:index, :edit, :update]
+  resources :bookings, only: [:index, :edit, :update] do
+    resources :reviews, only: [:new, :create]
+  end
 end
