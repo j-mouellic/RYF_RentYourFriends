@@ -16,11 +16,9 @@ calculate(event) {
   const dateFin = new Date(this.dateFinTarget.value);
   const totalJours = Math.round((dateFin - dateDebut) / (1000 * 60 * 60 * 24));
   const totalPrix = totalJours*this.prixtotalValue
-  console.log(this.prixtotalValue)
-
+  console.log(totalPrix)
   const resultElement = document.getElementById("resultjours");
-  resultElement.innerText = totalJours;
-
+  resultElement.innerText = totalJours + 1;
   const resultPrice = document.getElementById("resultprix");
-  resultPrice.innerText = totalPrix;
+  resultPrice.innerText = `${totalPrix - 20} €`;
 }}

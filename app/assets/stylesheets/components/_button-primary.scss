@@ -1,14 +1,21 @@
 .button-primary{
+  box-sizing: border-box;
   padding: 8px 16px;
-  background-color: #3A86FF;
-  border-radius: 16px;
-  color: white;
-  transition: ease 0.3s;
   border: none;
+  color: #fff;
+  background: linear-gradient(to right bottom, #fb5607, #ff0049, #ff0080, #da00ba, #8338ec);
+  border-radius: 16px;
+  font-weight: 600;
+  box-shadow: 1px 1px 4px #747272,
+             -1px -1px 4px #e4dede;
+  transition: ease 0.5s;
 }
 
+
 .button-primary:hover{
-  background-color: rgb(7, 32, 56);
+  background: linear-gradient(to right bottom, #ff0049, #f90071, #e0009c, #ad00c8, #3b38ec);
   color: white;
-  transition: ease 0.3s;
+  background-size: 300% 300%;
+  box-shadow:  2px 2px 6px #615d5d,
+             -1px -1px 6px #b1aaaa;
 }

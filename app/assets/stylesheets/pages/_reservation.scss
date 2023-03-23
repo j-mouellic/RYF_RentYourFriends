@@ -1,0 +1,27 @@
+// -------------------------------- PAGES / RESERVATION ------------------------
+
+#reserv {
+  color:  #727584;
+}
+a {
+color: #3A86FF
+}
+.p {
+  margin: 30px;
+}
+#demande-reservation{
+  color:  #727584;
+}
+.card-p {
+  color: #727584;
+  margin: 30px;
+  box-shadow: 2px 2px 5px rgba($color: #000000, $alpha: 0.2),
+  -2px -2px 5px rgba($color: #afa8a8, $alpha: 0.2);
+  border-radius: 8px;
+  padding: 10px;
+}
+.card-booking {
+  background-color: transparent !important;
+  border-color: transparent !important;
+  box-shadow: none;
+}
