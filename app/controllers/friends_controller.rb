@@ -25,7 +25,7 @@ class FriendsController < ApplicationController
   end
 
   def friend_params
-    params.require(:friend).permit(:name, :date_of_birth, :price, :genre, :address, :picture, :description, :activity_barbecue, :activity_birthday,
+    params.require(:friend).permit(:name, :date_of_birth, :price, :genre, :address, :photo, :description, :activity_barbecue, :activity_birthday,
       :activity_bowling, :activity_camping, :activity_concert, :activity_diner, :activity_hike, :activity_karaoke, :activity_movie,
       :activity_paintball, :activity_picnic, :activity_sam, :activity_shopping, :activity_sport, :activity_wedding, :default_arrogant,
       :default_cheap, :default_complotist, :default_disorganized, :default_impatient, :quality_brave, :quality_funny, :quality_good_looking,
