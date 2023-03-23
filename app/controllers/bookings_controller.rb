@@ -26,9 +26,10 @@ class BookingsController < ApplicationController
   end
 
   def update
+    @booking = Booking.find(params[:id])
     if @booking.update(booking_params)
       @booking.status = "pending"
-      redirect_to @booking, notice: "Your booking was successfully updated."
+      redirect_to bookings_path, notice: "Your booking was successfully updated."
     else
       render :edit, status: :unprocessable_entity
     end
