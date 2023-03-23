@@ -2,7 +2,7 @@
   <div class="friend align-items-center">
       <p><%= friend.name.capitalize %></p>
     <div class="name-qualities d-flex">
-      <%= image_tag friend.picture , class: "home-avatar"%>
+      <%= cl_image_tag friend.photo.key, height: 300, width: 300, crop: :fill, class: "home-avatar"%>
       <div class="friend-qualities-card">
         <% qualities = [] %>
         <% if friend.genre == "man" %>

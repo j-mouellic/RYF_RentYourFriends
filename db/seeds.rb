@@ -376,6 +376,8 @@ friends.each do |friend|
   seed = Friend.new(
     friend
   )
+  file = URI.open(friend[:picture])
+  seed.photo.attach(io: file, filename: "#{seed.name}.png", content_type: "image/png")
   seed.user = jean
   seed.save!
 end
