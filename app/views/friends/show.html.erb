@@ -131,23 +131,23 @@
       <h3>Mais aussi très</h3>
       <div>
         <% if @friend.default_complotist? %>
-          <p>Complotiste</p>
+          <p class="default" >Complotiste</p>
         <% end %>
 
         <% if @friend.default_impatient? %>
-          <p>Impatient</p>
+          <p class="default">Impatient</p>
         <% end %>
 
         <% if @friend.default_disorganized? %>
-          <p>Bordelique</p>
+          <p class="default">Bordelique</p>
         <% end %>
 
         <% if @friend.default_cheap? %>
-          <p>Radin</p>
+          <p class="default">Radin</p>
         <% end %>
 
         <% if @friend.default_arrogant? %>
-          <p>Arrogant</p>
+          <p class="default">Arrogant</p>
         <% end %>
       </div>
     </div>
@@ -176,11 +176,18 @@
           <p id="resultjours"> </p>
         </div>
         <div class="label-price">
+          <p>Nettoyage :</p>
+          <p>20€</p>
+        </div>
+        <div class="label-price">
+          <p>Remise Défauts :</p>
+          <p id="default-numb"></p>
+          <p id="remise"></p>
         </div>
       </div>
         <div class="label-price">
           <p> <strong> Prix total :</strong> </p>
-          <p id="resultprix">€</p>
+          <p id="resultprix"></p>
         </div>
   </section>
 </section>
