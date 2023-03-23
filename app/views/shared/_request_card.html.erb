@@ -5,6 +5,7 @@
   </p>Effectuée par
     <%= request.user.first_name %>
   <p>
+
   <p>Statut :
   <%# ajouter un dropdown menu ici pour changer le statut %>
     <%= request.status%>
@@ -14,4 +15,9 @@
   <% else %>
     <%= "Du #{request.start_date} au #{request.end_date}"%>
   <% end %>
+  <div class="status">
+  <button type="button" class="btn btn-outline-success">Valider</button>
+  <button type="button" class="btn btn-outline-danger">Refuser</button>
+  <button type="button" class="btn btn-outline-info">Terminer</button>
+  </div>
 </div>

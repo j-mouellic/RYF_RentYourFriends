@@ -116,12 +116,6 @@ a{
   align-items: center;
 }
 
-.label-price{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
 .price-element::after{
   content: "";
   height: 1px;
