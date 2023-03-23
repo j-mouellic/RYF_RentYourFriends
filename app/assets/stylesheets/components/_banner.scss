@@ -1,0 +1,21 @@
+#banner{
+  height: 500px;
+  padding: 120px;
+}
+
+.wrapper-banner{
+  width: 1240px;
+  margin: 0 auto;
+}
+#banner .title{
+  width: 500px;
+
+  & h1 {
+    font-weight: 800;
+    margin-bottom: 16px;
+  }
+
+  & button {
+    margin-top: 36px;
+  }
+}
