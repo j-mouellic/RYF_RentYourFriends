@@ -94,3 +94,17 @@ a{
   gap: 16px;
   grid-template-columns: repeat(5, 1fr);
 }
+
+footer{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  margin-top: 36px;
+  height: 100px;
+  width: 100%;
+  background-color: #05050e;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

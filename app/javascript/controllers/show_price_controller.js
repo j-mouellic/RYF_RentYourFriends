@@ -19,7 +19,7 @@ calculate(event) {
   console.log(this.prixtotalValue)
 
   const resultElement = document.getElementById("resultjours");
-  resultElement.innerText = totalJours;
+  resultElement.innerText = totalJours + 1;
 
   const resultPrice = document.getElementById("resultprix");
   resultPrice.innerText = totalPrix;
