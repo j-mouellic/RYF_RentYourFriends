@@ -4,10 +4,11 @@
   color: #727584;
 }
 #amis {
+  min-height: 330px ;
   padding: 10px;
-  margin-top: 16px;
 }
-.container-user-account {
+#useraccount{
+
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
