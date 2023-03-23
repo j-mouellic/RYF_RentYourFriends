@@ -1,0 +1,28 @@
+
+#titre {
+  display: flex;
+  color: #727584;
+}
+#amis {
+  padding: 10px;
+  margin-top: 16px;
+}
+.container-user-account {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.account-card {
+  margin-bottom: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+}
+#mesreservations {
+  min-height: 330px;
+}
+#details {
+  min-height: 330px;
+}
