@@ -1,8 +1,9 @@
 <section class="container-show">
   <section class="card-user-left">
     <div class="img-profile">
-      <%= image_tag  @friend.photo %>
-      <h1><strong> Rencontre <%= @friend.name.capitalize %></strong></h1>
+
+      <%= cl_image_tag  @friend.photo.key %>
+      <h1><strong> Rencontre <%= @friend.name %></strong></h1>
       <p> <%= @friend.description %> </p>
 
     </div>

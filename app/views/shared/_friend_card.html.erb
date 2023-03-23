@@ -1,6 +1,6 @@
 <div class= "card-home">
   <div class="friend align-items-center">
-      <p><%= friend.name.capitalize %></p>
+      <p id="title"><%= friend.name.capitalize %></p>
     <div class="name-qualities d-flex">
       <%= cl_image_tag friend.photo.key, height: 300, width: 300, crop: :fill, class: "home-avatar"%>
       <div class="friend-qualities-card">
@@ -98,7 +98,7 @@
         <% end %>
     </div>
     <div class="friend-price">
-      <p><%= friend.price %>€/jour</p>
+      <p id="price"><%= friend.price %>€/jour</p>
       <%= link_to "Réserver", friend_path(friend), class: "button-primary" %>
     </div>
   </div>
