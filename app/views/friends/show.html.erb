@@ -2,7 +2,7 @@
   <section class="card-user-left">
     <div class="img-profile">
       <%= image_tag  @friend.photo %>
-      <h1><strong> Rencontre <%= @friend.name %></strong></h1>
+      <h1><strong> Rencontre <%= @friend.name.capitalize %></strong></h1>
       <p> <%= @friend.description %> </p>
 
     </div>
@@ -163,10 +163,10 @@
         </div>
       </div>
       <div class="formulaire">
-        <%= simple_form_for [@friend, Booking.new], html:{data:{action:"submit->show-price#calculate"}} do |f| %>
+        <%= simple_form_for [@friend, Booking.new] do |f| %>
           <%= f.input :start_date, required: true, label: "Début", as: :string, input_html: { data: { controller: "datepicker", action:"change->show-price#calculate", show_price_target:"dateDebut", locale: "fr"} }%>
           <%= f.input :end_date, required: true, label: "Fin", as: :string, input_html: { data: { controller: "datepicker", action:"change->show-price#calculate", show_price_target:"dateFin" } } %>
-          <%= f.submit "Réserver", class: "button-primary-large" %>
+          <%= f.button :submit, "Réserver", class: "button-primary-large", data: {turbo_confirm: "Es-tu bien certain de vouloir réserver #{@friend.name}"}  %>
           </div>
         <% end %>
       </div>

@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="show-price"
 export default class extends Controller {
-  static targets = ["dateDebut", "dateFin"]
+  static targets = ["dateDebut", "dateFin", "popup"]
   static values = {
     prixtotal: Number
   }
