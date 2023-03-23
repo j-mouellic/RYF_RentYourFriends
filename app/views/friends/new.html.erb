@@ -1,41 +1,50 @@
-<%= simple_form_for @friend do |f| %>
-  <%= f.input :name %>
-  <%= f.input :date_of_birth, as: :date %>
-  <%= f.input :price, input_html: { min: 0 } %>
-  <%= f.input :genre %>
-  <%= f.input :address %>
+  <div class="en-tete-new"><h1><strong> Renseignez les informations de votre friend </strong></h1>
+  <h2>Il vous en sera éternellement reconnaissant !</h2>
+  </div>
+<div class= "new-friend-container">
+  <%= simple_form_for @friend do |f| %>
+    <%= f.input :name,wrapper_html: { class: 'form-group' }, label:"Prénom" %>
+    <%= f.input :date_of_birth, required: true, label: "Date de naissance", as: :string, input_html: { data: { controller: "datepicker", locale: "fr"} }%>
+    <%= f.input :price, input_html: { min: 0 }, label: "Prix journalier" %>
+    <%= f.input :genre, collection: ["Homme", "Femme"] %>
+    <%= f.input :address, label: "Adresse de votre friend" %>
 
-  <%= f.input :activity_wedding, as: :boolean %>
-  <%= f.input :activity_sam, as: :boolean %>
-  <%= f.input :activity_diner, as: :boolean %>
-  <%= f.input :activity_birthday, as: :boolean %>
-  <%= f.input :activity_bowling, as: :boolean %>
-  <%= f.input :activity_hike, as: :boolean %>
-  <%= f.input :activity_movie, as: :boolean %>
-  <%= f.input :activity_picnic, as: :boolean %>
-  <%= f.input :activity_concert, as: :boolean %>
-  <%= f.input :activity_karaoke, as: :boolean %>
-  <%= f.input :activity_shopping, as: :boolean %>
-  <%= f.input :activity_sport, as: :boolean %>
-  <%= f.input :activity_barbecue, as: :boolean %>
-  <%= f.input :activity_camping, as: :boolean %>
-  <%= f.input :activity_paintball, as: :boolean %>
+    <p><strong>Quelles sont ses activités préférées ?</strong>
+    <%= f.input :activity_wedding, as: :boolean, label:"Participation aux mariages" %>
+    <%= f.input :activity_sam, as: :boolean, label:"Ëtre Sam pour vos soirées" %>
+    <%= f.input :activity_diner, as: :boolean, label:"Participation aux dîners" %>
+    <%= f.input :activity_birthday, as: :boolean, label:"Participation aux anniversaires" %>
+    <%= f.input :activity_bowling, as: :boolean, label:"Participation aux parties de bowling" %>
+    <%= f.input :activity_hike, as: :boolean, label:"Participation aux randonnées" %>
+    <%= f.input :activity_movie, as: :boolean, label:"Visionnage de films" %>
+    <%= f.input :activity_picnic, as: :boolean, label:"Participation aux pinics" %>
+    <%= f.input :activity_concert, as: :boolean, label:"Participation aux concerts" %>
+    <%= f.input :activity_karaoke, as: :boolean, label:"Participation aux karaokés" %>
+    <%= f.input :activity_shopping, as: :boolean, label:"Accompagnement au shopping" %>
+    <%= f.input :activity_sport, as: :boolean, label:"Participation aux activités sportives" %>
+    <%= f.input :activity_barbecue, as: :boolean, label:"Participation aux barbecues (cuisson non-inclue)" %>
+    <%= f.input :activity_camping, as: :boolean, label:"Accompagnement sorties camping (frais annexes : montage et dépliage de tente)" %>
+    <%= f.input :activity_paintball, as: :boolean, label:"Participation aux parties de paintball" %>
 
-  <%= f.input :default_complotist, as: :boolean %>
-  <%= f.input :default_impatient, as: :boolean %>
-  <%= f.input :default_disorganized, as: :boolean %>
-  <%= f.input :default_cheap, as: :boolean %>
-  <%= f.input :default_arrogant, as: :boolean %>
+    <p><strong>Quels sont ses petits défauts ?<br></strong>
+    <%= f.input :default_complotist, as: :boolean, label:"Complotiste?" %>
+    <%= f.input :default_impatient, as: :boolean, label:"Impatient.e?" %>
+    <%= f.input :default_disorganized, as: :boolean, label:"désorganisé.e?"%>
+    <%= f.input :default_cheap, as: :boolean, label:"Radin.e?" %>
+    <%= f.input :default_arrogant, as: :boolean, label:"arrogant.e?" %>
 
-  <%= f.input :quality_funny, as: :boolean %>
-  <%= f.input :quality_reliable, as: :boolean %>
-  <%= f.input :quality_honest, as: :boolean %>
-  <%= f.input :quality_good_looking, as: :boolean %>
-  <%= f.input :quality_brave, as: :boolean %>
+    <p><strong>Quelles sont ses qualités ?<br></strong>
+    <%= f.input :quality_funny, as: :boolean, label:"Amusant.e?" %>
+    <%= f.input :quality_reliable, as: :boolean, label:"Fiable?" %>
+    <%= f.input :quality_honest, as: :boolean, label:"Honnête?" %>
+    <%= f.input :quality_good_looking, as: :boolean, label:"Un physique agréable?" %>
+    <%= f.input :quality_brave, as: :boolean, label:"Courageux.se?" %>
 
-  <%= f.input :user_id, as: :hidden, value: current_user.id %>
-  <%= f.input :photo, as: :file  %>
-  <%= f.input :description %>
+    <p><strong>Et c'est pas fini...<br></strong>
+    <%= f.input :user_id, as: :hidden, value: current_user.id %>
+    <%= f.input :photo, as: :file, label:"À quoi votre friend ressemble-t-il/elle?"  %>
+    <%= f.input :description, label:"Présentez votre friend ! Soyez sincère, ses défauts peuvent également être ses qualités !" %>
 
-  <%= f.button :submit %>
-<% end %>
+    <%= f.button :submit, class: "button-primary-large", label:"ajoute ton friend <br> (il/elle te remerciera)" %>
+  <% end %>
+</div>

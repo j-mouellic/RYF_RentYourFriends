@@ -2,7 +2,11 @@ class FriendsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show, :new, :create]
 
   def index
-    @friends = Friend.all
+    if params[:query].present?
+      @friends = Friend.where("name ILIKE ?", "%#{params[:query]}%")
+    else
+      @friends = Friend.all
+    end
   end
 
   def show
