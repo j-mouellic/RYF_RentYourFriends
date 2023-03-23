@@ -1,6 +1,6 @@
 <div class="wrapper">
   <h1> Votre avis  </h1>
-  <%= simple_form_for([@friend, @booking, @review]) do |f| %>
+  <%= simple_form_for([@booking, @review]) do |f| %>
     <%= f.input :review_content, label: "Commentaire" %>
     <%= f.input :review_rating, label: "Note", collection: Review::AUTHORIZED_RATINGS %>
     <div class="btn-bottom">

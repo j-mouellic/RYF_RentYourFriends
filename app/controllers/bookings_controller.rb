@@ -27,6 +27,7 @@ class BookingsController < ApplicationController
 
   def update
     if @booking.update(booking_params)
+      @booking.status = "pending"
       redirect_to @booking, notice: "Your booking was successfully updated."
     else
       render :edit, status: :unprocessable_entity
@@ -36,6 +37,6 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:status, :start_date, :end_date)
+    params.require(:booking).permit(:status, :start_date)
   end
 end
