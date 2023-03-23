@@ -2,11 +2,6 @@
 @import "home";
 @import "users";
 
-
-p{
-  margin: 0 8px 0 0;
-}
-
 a{
   text-decoration: none;
   color: white;
@@ -57,11 +52,6 @@ a{
   margin-bottom: 12px;
 }
 
-.friend #title {
-  font-size: 26px;
-  text-align: center;
-}
-
 .friend::after{
   content: "";
   height: 1px;
@@ -86,6 +76,7 @@ a{
 
 .friend-qualities-card p {
   display: inline-block;
+  margin: 0 8px 0 0;
 }
 
 .friend-price {
@@ -115,8 +106,32 @@ footer{
   height: 100px;
   width: 100%;
   background-color: #05050e;
-  color: white;
+  color: rgb(42, 42, 47);
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+#title {
+  font-size: 26px;
+  opacity: 100%;
+  color: white;
+}
+
+.friend-title {
+  font-weight: bold;
+  border-radius: 20px;
+  opacity: 70%;
+  text-align: center;
+  transition: 0.3s ease;
+}
+
+.friend-title:hover {
+  opacity: 100%;
+}
+
+mark {
+  display: inline-block;
+  line-height: 0em;
+  padding-bottom: 0.5em;
 }
