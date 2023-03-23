@@ -5,11 +5,9 @@
   </p>Effectuée par
     <%= request.user.first_name %>
   <p>
-
   <p>Statut :
-  <%= simple_form_for(request) do |f| %>
-    <%= f.select :status, options_for_select(["pending", "validated", "declined", "finished"], f.object.status) %>
-  <%end %></p>
+     <%= request.status %>
+  </p>
 
   <%= request.status %>
   <% if request.start_date == request.end_date %>
