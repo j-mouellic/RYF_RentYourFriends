@@ -1,31 +1,19 @@
 // -------------------------------- PAGES / RESERVATION ------------------------
-#reserv {
-  color:  #727584;
-}
+
 a {
   display: block;
 }
 
-#demande-reservation{
-  color:  #727584;
-}
-.card-p {
-  color: #0120b8;
-  margin: 30px;
-  box-shadow: 2px 2px 5px rgba($color: #000000, $alpha: 0.2),
-  -2px -2px 5px rgba($color: #AFA8A8, $alpha: 0.2);
-  border-radius: 8px;
-  padding: 10px;
-}
-.card-booking {
-  background-color: transparent !important;
-  border-color: transparent !important;
-  box-shadow: none;
-}
-
 // ----------------------------- BOOKING INDEX LAYOUT -------------------------------
 
+.wrapper-bookings{
+  max-width: 1240px;
+  margin: 0 auto;
 
+  & p{
+    margin: 0;
+  }
+}
 
 .booking-title{
   color: #727584;

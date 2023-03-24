@@ -1,10 +1,11 @@
+<div class="wrapper-bookings">
   <h1 class="booking-title">Vos réservations </h1>
   <% if @bookings == [] %>
-  <div class="p">
-    <p>Vous n'avez pas encore fait de réservation !
-    <%= link_to "Trouvez maintenant des amis parfaits pour vous", friends_path %></p>
-    <% end %>
-  </div>
+    <div class="p">
+      <p>Vous n'avez pas encore fait de réservation !
+      <%= link_to "Trouvez maintenant des amis parfaits pour vous", friends_path %></p>
+    </div>
+  <% end %>
   <div class="booking-grid-resa" id="card">
     <% @bookings.each do |booking|%>
     <%= render "shared/booking_card", booking: booking %>
@@ -12,9 +13,10 @@
   </div>
   <h1 class="booking-title">Vos demandes de réservation</h1>
   <% if @requests != [] %>
-  <div class="booking-grid-resa">
-    <% @requests.each do |request|%>
+    <div class="booking-grid-resa">
+      <% @requests.each do |request|%>
       <%= render "shared/request_card", request: request %>
-    <%end%>
-  </div>
+      <%end%>
+    </div>
   <% end %>
+</div>
