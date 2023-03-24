@@ -38,25 +38,26 @@
   <div class="friend-bottom d-flex justify-content-between align-items-center">
     <div class="friend-activities-grid">
       <% activities = [] %>
-      <% activities.push "fa-solid fa-ring" if friend.activity_wedding %>
-      <% activities.push "fa-solid fa-car" if friend.activity_sam %>
-      <% activities.push "fa-solid fa-utensils" if friend.activity_diner %>
-      <% activities.push "fa-solid fa-cake-candles" if friend.activity_birthday %>
-      <% activities.push "fa-solid fa-bowling-ball" if friend.activity_bowling %>
-      <% activities.push "fa-solid fa-person-hiking" if friend.activity_hike %>
-      <% activities.push "fa-solid fa-film" if friend.activity_movie %>
-      <% activities.push "fa-solid fa-campground" if friend.activity_picnic %>
-      <% activities.push "fa-solid fa-guitar" if friend.activity_concert %>
-      <% activities.push "fa-solid fa-music" if friend.activity_karaoke %>
-      <% activities.push "fa-solid fa-bag-shopping" if friend.activity_shopping %>
-      <% activities.push "fa-solid fa-dumbbell" if friend.activity_sport %>
-      <% activities.push "fa-solid fa-fire-burner" if friend.activity_barbecue %>
-      <% activities.push "fa-solid fa-caravan" if friend.activity_camping %>
-      <% activities.push "fa-solid fa-gun" if friend.activity_paintball %>
+      <% activities.push ({ icone: "fa-solid fa-ring", title: "Mariage"}) if friend.activity_wedding %>
+      <% activities.push ({ icone: "fa-solid fa-car", title: "Être ton Sam" }) if friend.activity_sam %>
+      <% activities.push ({ icone: "fa-solid fa-utensils", title: "Un dîner"}) if friend.activity_diner %>
+      <% activities.push ({ icone: "fa-solid fa-cake-candles", title: "Anniversaire"}) if friend.activity_birthday %>
+      <% activities.push ({ icone: "fa-solid fa-bowling-ball", title: "Bowling"}) if friend.activity_bowling %>
+      <% activities.push ({ icone: "fa-solid fa-person-hiking", title: "Randonner"}) if friend.activity_hike %>
+      <% activities.push ({ icone: "fa-solid fa-film", title: "Cinema" }) if friend.activity_movie %>
+      <% activities.push ({ icone: "fa-solid fa-campground", title: "Pic-nic"}) if friend.activity_picnic %>
+      <% activities.push ({ icone: "fa-solid fa-guitar", title: "Concert" }) if friend.activity_concert %>
+      <% activities.push ({ icone: "fa-solid fa-music", title: "Karaoke"}) if friend.activity_karaoke %>
+      <% activities.push ({ icone: "fa-solid fa-bag-shopping", title: "Shopping" }) if friend.activity_shopping %>
+      <% activities.push ({ icone: "fa-solid fa-dumbbell", title: "Sport" }) if friend.activity_sport %>
+      <% activities.push ({ icone: "fa-solid fa-fire-burner", title: "Barbecue" }) if friend.activity_barbecue %>
+      <% activities.push ({ icone: "fa-solid fa-caravan", title: "Camping" }) if friend.activity_camping %>
+      <% activities.push ({ icone: "fa-solid fa-gun", title: "Paintball" }) if friend.activity_paintball %>
       <% 4.times do %>
         <% if activities.any? %>
           <% activity = activities.sample %>
-          <% icon = content_tag(:i, "", class: activity, style: "color: ##2d2d72") %>
+
+          <% icon = content_tag(:i, "", class: activity[:icone], style: "color: ##2d2d72", data_bs_toggle: "tooltip", data_bs_placement: "bottom", title: activity[:title], data_bs_custom_class: "custom-tooltip") %>
           <p><%= icon %></p>
           <% activities.delete(activity) %>
         <% end %>
