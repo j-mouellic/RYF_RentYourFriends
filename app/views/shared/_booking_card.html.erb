@@ -25,7 +25,7 @@
       <i class="fa-brands fa-facebook"></i>
     </div>
   </div>
-  <%= booking.total_price %>
+  <%# <%= booking.total_price %>
   <% if booking.status == "finished" %>
     <%= link_to "Notez votre expérience !", new_booking_review_path(booking), class: "button-secondary" %>
   <% else %>

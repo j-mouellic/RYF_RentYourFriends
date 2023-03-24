@@ -12,7 +12,7 @@ export default class extends Controller {
       imageHeight: 450,
       imageWidth: 400,
       imageAlt: 'A tall image',
-      timer: 2000,
+      timer: 2500,
       confirmButtonText: 'Bien joué !'
     })
   }
