@@ -98,10 +98,7 @@ a{
   grid-template-columns: repeat(5, 1fr);
 }
 
-footer{
-  position: fixed;
-  left: 0;
-  bottom: 0;
+footer {
   margin-top: 36px;
   height: 100px;
   width: 100%;
@@ -137,6 +134,5 @@ mark {
 }
 
 .custom-tooltip {
-  --bs-tooltip-bg: var(--bs-primary);
-  background-color: blue;
+  --bs-tooltip-bg: var(--bs-primary) !important;
 }
