@@ -2,7 +2,7 @@
   <section class="card-user-left">
     <div class="img-profile">
       <%= cl_image_tag  @friend.photo.key %>
-      <h1><strong> Rencontre <%= @friend.name %></strong></h1>
+      <h1><strong> Rencontre <%= @friend.name.capitalize %></strong></h1>
       <p> <%= @friend.description %> </p>
     </div>
   </section>
@@ -195,7 +195,7 @@
       </div>
     </div>
 </section>
-<section class="card-booking-right" data-controller="show-price" data-show-price-prixTotal-value="<%=@friend.price%>">
+<section class="card-booking-right" data-controller="show-price" data-show-price-friendid-value="<%=@friend.id%>" data-show-price-prixTotal-value="<%=@friend.price%>">
       <div class="price-user">
         <p><strong><%= @friend.price %>€</strong> par jour</p>
         <div class="reviews">
@@ -207,7 +207,7 @@
         <%= simple_form_for [@friend, Booking.new], html: { data: { action:"submit->show-price#reserve"}} do |f| %>
           <%= f.input :start_date, required: true, label: "Début", as: :string, input_html: { data: { controller: "datepicker", action:"change->show-price#calculate", show_price_target:"dateDebut", locale: "fr"} }%>
           <%= f.input :end_date, required: true, label: "Fin", as: :string, input_html: { data: { controller: "datepicker", action:"change->show-price#calculate", show_price_target:"dateFin" } } %>
-          <%= f.button :submit, "Réserver", class: "button-primary-large" %>
+          <%= f.button :submit, "Réserver", class: "button-primary-large", data: {turbo_confirm: "Are you sure?"} %>
           </div>
         <% end %>
         <div class="price-element">

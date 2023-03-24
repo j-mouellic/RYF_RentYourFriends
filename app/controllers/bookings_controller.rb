@@ -9,10 +9,12 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.new(booking_params)
+    @booking = Booking.new()
     @booking.user = current_user
     @booking.friend = Friend.find(params[:friend_id])
     @booking.status = "pending"
+    @booking.start_date = params[:start_date]
+    @booking.end_date = params[:end_date]
     if @booking.save
       redirect_to friend_path(@booking.friend), notice: "Votre réservation est en attente de confirmation !"
     else
