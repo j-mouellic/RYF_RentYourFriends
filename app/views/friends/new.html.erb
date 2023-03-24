@@ -45,6 +45,9 @@
     <%= f.input :photo, as: :file, label:"À quoi votre friend ressemble-t-il/elle?"  %>
     <%= f.input :description, label:"Présentez votre friend ! Soyez sincère, ses défauts peuvent également être ses qualités !" %>
 
-    <%= f.button :submit, class: "button-primary-large", label:"ajoute ton friend <br> (il/elle te remerciera)" %>
+    <div class="popup-friend">
+      <%= f.button :submit, class: "button-primary-large", label:"ajoute ton friend <br> (il/elle te remerciera)", input_html: { data: { action:"click->popup-friend#showpop" }} %>
+    </div>
   <% end %>
+
 </div>

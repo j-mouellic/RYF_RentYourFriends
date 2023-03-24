@@ -1,8 +1,9 @@
 import { Controller } from "@hotwired/stimulus"
+//= require sweetalert2
 
 // Connects to data-controller="show-price"
 export default class extends Controller {
-  static targets = ["dateDebut", "dateFin", "popup"]
+  static targets = ["dateDebut", "dateFin", "showpop"]
   static values = {
     prixtotal: Number
   }
@@ -31,5 +32,15 @@ export default class extends Controller {
     resultElement.innerText = totalJours + 1;
     const resultPrice = document.getElementById("resultprix");
     resultPrice.innerText = `${PrixRemise} €`;
+  }
+
+  showpop(event) {
+  Swal.fire({
+    position: 'top-end',
+    icon: 'success',
+    title: 'Your work has been saved',
+    showConfirmButton: false,
+    timer: 1500
+})
   }
 }
