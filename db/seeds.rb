@@ -94,7 +94,10 @@ friends = [
     quality_good_looking: true,
     quality_brave: true,
     picture: "https://randomuser.me/api/portraits/women/67.jpg",
-    description: "some description"
+    description: "Que dire de Marie si ce n'est qu'elle est un véritable rayon de soleil ? Attention aux yeux, Marie maîtrise
+    les pas de danse les plus spectaculaires : chachacha, madison, moonwalk, macarena... Rien ne lui résiste ! Que ça soit pour un mariage,
+    un dîner, un anniversaire ou même au bowling, elle ne peut s'empêcher de lancer une petite chenille. Prévoyez une journée de repos
+    suite à sa prestation."
   },
   {
     name: "myriam",
@@ -392,7 +395,43 @@ booking = Booking.new(
   end_date: "01/01/2024",
 )
 
+booking1 = Booking.new(
+  total_price: 1235,
+  status: "validated",
+  start_date: "12/12/2023",
+  end_date: "01/01/2024",
+)
+
+booking2 = Booking.new(
+  total_price: 2236,
+  status: "declined",
+  start_date: "12/12/2023",
+  end_date: "01/01/2024",
+)
+
+booking3 = Booking.new(
+  total_price: 56,
+  status: "finished",
+  start_date: "01/03/2023",
+  end_date: "02/03/2023",
+)
+
 booking.user = edgard
 bob = Friend.first
 booking.friend = bob
 booking.save!
+
+booking1.user = edgard
+ginette = Friend.find_by_name("Ginette")
+booking1.friend = ginette
+booking1.save!
+
+booking2.user = edgard
+barney = Friend.find_by_name("Barney")
+booking2.friend = barney
+booking2.save!
+
+booking3.user = edgard
+bernard = Friend.find_by_name("Bernard")
+booking3.friend = bernard
+booking3.save!

@@ -32,11 +32,4 @@ export default class extends Controller {
     const resultPrice = document.getElementById("resultprix");
     resultPrice.innerText = `${PrixRemise.toLocaleString('fr-FR', { minimumFractionDigits: 2 })} €`;  }
 
-tada(event) {
-  Swal.fire({
-    imageUrl: 'https://placeholder.pics/svg/300x1500',
-    imageHeight: 1500,
-    imageAlt: 'A tall image'
-  })
-}
 }
