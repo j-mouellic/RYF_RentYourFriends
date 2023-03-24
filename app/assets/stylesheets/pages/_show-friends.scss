@@ -62,7 +62,7 @@ a{
 
 // ------------------------ USER activites, defaults, qualities ----------------------
 .card-informations h3{
-  margin-bottom: 8px;
+  margin: 24px 0px 16px 0px;
 }
 .img-profile img {
   width: 80%;
@@ -75,6 +75,9 @@ a{
 .friend-activities,
 .friend-defaults{
   margin-bottom: 32px;
+  & h3 {
+    margin-bottom: 16px;
+  }
 }
 
 .grid-activities{
@@ -86,6 +89,7 @@ a{
   font-weight: 100;
 }
 
+
 .friend-defaults p{
   display: inline-block;
   padding: 8px 16px;
@@ -94,6 +98,7 @@ a{
   background-color: #FB5607;
   border-radius: 50px;
   margin-bottom: 8px;
+  opacity: 80%;
 }
 
 .friend-qualities p{
@@ -102,6 +107,7 @@ a{
   margin-bottom: 8px;
   color: white;
   background-color: #2EC4B6;
+  opacity: 80%;
   border-radius: 50px;
 }
 
