@@ -42,7 +42,7 @@
               <%= link_to friend_path(friend) do %>
                 <div class="card-user-account">
                   <% link_to "", friends_path(friend.id) %>
-                  <%= image_tag  friend.picture %>
+                  <%= cl_image_tag friend.photo.key %>
                   <%= friend.name.capitalize %>
                 </div>
               <% end %>
