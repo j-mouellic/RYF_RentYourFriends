@@ -21,3 +21,15 @@
     <% end %>
   </div>
 </div>
+<script>
+    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+    // const exampleEl = document.getElementById('example');
+    // const tooltip = new bootstrap.Tooltip(exampleEl, options);
+
+    //Tried this; didn't work:
+    // $(function () {
+    //     $('[data-toggle="tooltip"]').tooltip()
+    // })
+
+</script>

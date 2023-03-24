@@ -135,3 +135,7 @@ mark {
   line-height: 0em;
   padding-bottom: 0.5em;
 }
+
+.custom-tooltip {
+  --bs-tooltip-bg: var(--bs-primary);
+}
