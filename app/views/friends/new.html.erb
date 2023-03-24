@@ -1,8 +1,8 @@
   <div class="en-tete-new"><h1><strong> Renseignez les informations de votre friend </strong></h1>
   <h2>Il vous en sera éternellement reconnaissant !</h2>
   </div>
-<div class= "new-friend-container">
-  <%= simple_form_for @friend do |f| %>
+<div class= "new-friend-container", data-controller="try">
+  <%= simple_form_for @friend, html: { data: { action:"submit->try#tada"}} do |f| %>
     <%= f.input :name,wrapper_html: { class: 'form-group' }, label:"Prénom" %>
     <%= f.input :date_of_birth, required: true, label: "Date de naissance", as: :string, input_html: { data: { controller: "datepicker", locale: "fr"} }%>
     <%= f.input :price, input_html: { min: 0 }, label: "Prix journalier" %>
@@ -44,8 +44,7 @@
     <%= f.input :user_id, as: :hidden, value: current_user.id %>
     <%= f.input :photo, as: :file, label:"À quoi votre friend ressemble-t-il/elle?"  %>
     <%= f.input :description, label:"Présentez votre friend ! Soyez sincère, ses défauts peuvent également être ses qualités !" %>
-    <div class="try">
-    <%= f.button :submit, class: "button-primary-large", label:"ajoute ton friend <br> (il/elle te remerciera)" %>
+    <%= f.button :submit, class: "button-primary-large", label:"ajoute ton friend <br> (il/elle te remerciera)"  %>
     </div>
   <% end %>
 </div>
