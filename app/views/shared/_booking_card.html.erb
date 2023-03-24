@@ -1,7 +1,6 @@
 <div class="card-booking-resa">
   <div class="card-top-resa">
     <%= image_tag  booking.friend.picture %>
-
     <% if booking.status == "validated" %>
       <h3><%= booking.friend.name.capitalize %> a hâte de vous voir 😉</h3>
     <% elsif booking.status == "pending" %>
@@ -11,9 +10,6 @@
     <% else %>
       <h3><%= booking.friend.name.capitalize %> vous remercie pour ce moment 😘</h3>
     <% end %>
-
-
-
   </div>
   <div class="statut-layout">
       <% if booking.status == "validated" %>
@@ -43,7 +39,7 @@
       <i class="fa-brands fa-facebook"></i>
     </div>
   </div>
-  <%= booking.total_price %>
+  <%# <%= booking.total_price %>
   <% if booking.status == "finished" %>
     <%= link_to "Notez votre expérience !", new_booking_review_path(booking), class: "button-primary" %>
   <% else %>

@@ -27,7 +27,15 @@
           <div class="account-list">
             <%= image_tag  booking.friend.picture %>
             <p><%= booking.friend.name.capitalize %></p>
-            <p>Statut : <%= booking.status %></p>
+            <% if booking.status == "validated" %>
+              <p>Validée</p>
+            <% elsif booking.status == "pending" %>
+              <p>En attente</p>
+            <% elsif booking.status == "declined" %>
+              <p>Refusée</p>
+            <% else %>
+              <p>Terminée</p>
+            <% end %>
           </div>
           <% end %>
         <% else %>
