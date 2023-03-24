@@ -25,6 +25,7 @@ class BookingsController < ApplicationController
   end
 
   def update
+    raise
     @booking = Booking.find(params[:id])
     if @booking.update(booking_params)
       @booking.status = "pending"
@@ -34,10 +35,10 @@ class BookingsController < ApplicationController
     end
   end
 
-  def validated
+  def finished
     @booking = Booking.find(params[:id])
-    @booking.status = "validated"
-    redirect_to bookings_path, notice: "Votre demande de réservation a été acceptée !"
+    @booking.status = "finished"
+    redirect_to bookings_path, notice: "Votre réservation est terminée !"
   end
 
   private

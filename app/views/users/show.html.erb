@@ -1,27 +1,41 @@
-<h1 class="m-3" id="titre">Mon compte  &ensp; <i class="fa-solid fa-user" style="color: #727584;"></i></h1>
+<h1 class="m-3" id="titre"><i class="fa-solid fa-user" style="color: #727584;"></i>Mon compte</h1>
 <div class="container-user-account">
   <div class="account-card" id="details">
-    <p>Détails:</p>
-    <br>
-    <%= @user.pseudo %>
-    <%= @user.first_name %>
-    <%= @user.last_name %>
-    <%= @user.date_of_birth%>
+    <div>
+      <h2>Bienvenue <%= @user.pseudo %></h2>
+    </div>
+    <div>
+      <h3>Détails du compte</h3>
+        <div class="details">
+          <p>Prénom : <%= @user.first_name %></p>
+          <p>Nom : <%= @user.last_name %></p>
+          <p>Email : <%= @user.email%></p>
+        </div>
+    </div>
+    <div class= button-section>
+      <button class="button-secondary"><i class="fa-solid fa-gear"></i>Paramètre</button>
+      <button class="button-secondary"><i class="fa-solid fa-gift"></i>Parrainer un ami</button>
+      <button class="button-secondary"><i class="fa-regular fa-circle-question"></i>Support</button>
+    </div>
+    <button class="button-danger"><i class="fa-regular fa-circle-xmark"></i>supprimer le compte</button>
   </div>
 
   <div class="account-card" id="mesreservations">
-    <p>Mes réservations:</p>
-    <br>
-    <% if @bookings.count > 0 %>
-      <% @bookings.each do |booking| %>
-        <%= booking.friend.name %>
+    <h2>Mes réservations</h2>
+      <% if @bookings.count > 0 %>
+        <% @bookings.each do |booking| %>
+        <div class="account-list">
+          <%= image_tag  booking.friend.picture %>
+          <p><%= booking.friend.name.capitalize %></p>
+          <p>Statut : <%= booking.status %></p>
+        </div>
+        <% end %>
+      <% else %>
+        <p>Vous n'avez aucune réservation</p>
       <% end %>
-    <% else %>
-      <p>Vous n'avez aucune réservation</p>
-    <% end %>
   </div>
   <div class="account-card" id="amis">
-    <p>Mes amis à louer</p>
+    <h2>Mes amis à louer</h2>
     <% if @friends.count > 0 %>
         <div class="account-grid">
           <% @friends.each do |friend| %>

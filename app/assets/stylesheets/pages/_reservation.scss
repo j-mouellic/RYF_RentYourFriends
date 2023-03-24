@@ -3,16 +3,14 @@
   color:  #727584;
 }
 a {
-color: #3A86FF
+  display: block;
 }
-.p {
-  margin: 30px;
-}
+
 #demande-reservation{
   color:  #727584;
 }
 .card-p {
-  color: #727584;
+  color: #0120b8;
   margin: 30px;
   box-shadow: 2px 2px 5px rgba($color: #000000, $alpha: 0.2),
   -2px -2px 5px rgba($color: #AFA8A8, $alpha: 0.2);
@@ -23,4 +21,127 @@ color: #3A86FF
   background-color: transparent !important;
   border-color: transparent !important;
   box-shadow: none;
+}
+
+// ----------------------------- BOOKING INDEX LAYOUT -------------------------------
+
+
+
+.booking-title{
+  color: #727584;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 48px 16px;
+}
+
+//  --------------------------------- GRID MES RÉSERVATIONS -------------------------
+.booking-grid-resa {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.card-booking-resa{
+  width: 100%;
+  color: #727584;
+  border-radius: 15px;
+  background-color: #F0F0F0;
+  box-shadow: 2px 2px 5px rgba($color: #000000, $alpha: 0.2),
+  -2px -2px 5px rgba($color: #AFA8A8, $alpha: 0.2);
+  padding: 16px;
+  text-align: center;
+}
+
+.card-top-resa{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.statut-layout{
+  text-align: center;
+  width: 100%;
+  background-color: #2EC4B6;
+  padding: 8px 16px;
+  margin: 16px 0 16px 0;
+  color: white;
+  border-radius: 8px;
+}
+
+.card-booking-resa img{
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  margin-right: 16px;
+}
+
+.card-middle-resa{
+  margin-bottom: 16px;
+  color: #2EC4B6;
+}
+
+.card-bottom-resa {
+  & .icons {
+    font-size: 1.2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 32px;
+  }
+
+  & i{
+    margin-right: 16px;
+  }
+
+  & i:hover{
+    color: #2EC4B6;
+  }
+}
+
+
+// ---------------------------- GRID DEMANDE DE RÉSERVATIONS -------------------------
+
+.card-double-img{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 16px;
+  margin-top: 16px;
+
+  & img {
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    margin: 0;
+  }
+
+  & span {
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    background-color: #000000;
+  }
+
+  & i {
+    font-size: 2em;
+    color: #2EC4B6;
+  }
+
+  & .left{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  & .right{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+.button-request{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }

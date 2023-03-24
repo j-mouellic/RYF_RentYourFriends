@@ -1,20 +1,20 @@
-<h1 class="m-4" id="reserv">Vos réservations </h1>
-<% if @bookings == [] %>
-<div class="p">
-  <p>Vous n'avez pas encore fait de réservation !
-  <%= link_to "Trouvez maintenant des amis parfaits pour vous", friends_path %></p>
-<% end %>
-</div>
-<div class="container" id="card">
-  <% @bookings.each do |booking|%>
-  <%= render "shared/booking_card", booking: booking %>
-  <%end%>
-</div>
-<% if @requests != [] %>
-  <h2 class="m-4" id="demande-reservation">Vos demandes de réservation</h2>
-<div class="card-p">
-  <% @requests.each do |request|%>
-    <%= render "shared/request_card", request: request %>
-  <%end%>
-</div>
-<% end %>
+  <h1 class="booking-title">Vos réservations </h1>
+  <% if @bookings == [] %>
+  <div class="p">
+    <p>Vous n'avez pas encore fait de réservation !
+    <%= link_to "Trouvez maintenant des amis parfaits pour vous", friends_path %></p>
+    <% end %>
+  </div>
+  <div class="booking-grid-resa" id="card">
+    <% @bookings.each do |booking|%>
+    <%= render "shared/booking_card", booking: booking %>
+    <%end%>
+  </div>
+  <h1 class="booking-title">Vos demandes de réservation</h1>
+  <% if @requests != [] %>
+  <div class="booking-grid-resa">
+    <% @requests.each do |request|%>
+      <%= render "shared/request_card", request: request %>
+    <%end%>
+  </div>
+  <% end %>

@@ -12,6 +12,8 @@ Rails.application.routes.draw do
     resources :bookings, only: [:new, :create]
   end
   resources :bookings, only: [:index, :edit, :update] do
+    get :finished, on: :member
+    patch :finished, on: :member
     resources :reviews, only: [:new, :create]
   end
 end
