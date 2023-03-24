@@ -267,7 +267,7 @@ friends = [
     quality_good_looking: false,
     quality_brave: true,
     picture: "https://randomuser.me/api/portraits/men/90.jpg",
-    description: "Johnny Boy est un très bon rapport qualité/prix pour toutes vos activités d’intérieur. Si vous souhaitez passer une soirée endiablée autour d’un karaoké ou autour d’un bon feu de cheminée à jouer aux jeux de société, Johnny est l’homme de la situation. De très (trop) bonne compagnie, ne l’installez pas à côté de votre bien-aimée. A bon entendeur..."
+    description: "Johnny Boy est un très bon rapport qualité/prix pour toutes vos activités d’intérieur. Si vous souhaitez passer une soirée endiablée autour d’un karaoké ou autour d’un bon feu de cheminée à jouer aux jeux de société, Johnny est l’Homme de la situation. De très (trop) bonne compagnie, ne l’installez pas à côté de votre bien-aimée. A bon entendeur..."
   },
   {
     name: "Lily",
