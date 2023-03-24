@@ -30,8 +30,7 @@ export default class extends Controller {
     const resultElement = document.getElementById("resultjours");
     resultElement.innerText = totalJours + 1;
     const resultPrice = document.getElementById("resultprix");
-    resultPrice.innerText = `${PrixRemise} €`;
-  }
+    resultPrice.innerText = `${PrixRemise.toLocaleString('fr-FR', { minimumFractionDigits: 2 })} €`;  }
 
 tada(event) {
   Swal.fire({
