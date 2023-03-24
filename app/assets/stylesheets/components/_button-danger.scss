@@ -1,0 +1,15 @@
+.button-danger{
+  padding: 8px 16px;
+  background-color: rgb(233, 7, 7);
+  border-radius: 16px;
+  color: white;
+  width: 100%;
+  transition: ease 0.3s;
+  border: none;
+}
+
+.button-danger:hover{
+  background-color: rgb(133, 7, 7);
+  color: white;
+  transition: ease 0.3s;
+}

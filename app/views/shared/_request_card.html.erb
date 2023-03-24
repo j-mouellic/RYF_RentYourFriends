@@ -1,20 +1,33 @@
-<div class="card card-booking d-flex">
-  </p>Demande de réservation pour
-    <%= request.friend.name.capitalize %>!
-  <p>
-  </p>Effectuée par
-    <%= request.user.first_name %>
-  <p>
-
-  <p>Statut :
-  <%= simple_form_for(request) do |f| %>
-    <%= f.select :status, options_for_select(["pending", "validated", "declined", "finished"], f.object.status) %>
-  <%end %></p>
-
-  <%= request.status %>
-  <% if request.start_date == request.end_date %>
-    <%= "Le #{request.start_date}" %>
-  <% else %>
-    <%= "Du #{request.start_date} au #{request.end_date}"%>
-  <% end %>
+<div class="card-booking-resa">
+  <h5>Demande de réservation pour</h5>
+  <div class="card-double-img">
+    <div class="left">
+      <%= image_tag  request.friend.picture %>
+      <%= request.friend.name.capitalize %>
+    </div>
+    <%# insérer la flêche duo %>
+    <i class="fa-solid fa-arrow-right-arrow-left"></i>
+    <div class="right">
+      <span></span>
+      <%= request.user.first_name %>
+    </div>
+  </div>
+  <div class="statut-layout">
+      <p>Statut :
+        <%= request.status%>
+      </p>
+    </div>
+  <div class="card-middle-resa">
+    <h4>Votre activité est prévue</h4>
+    <% if request.start_date == request.end_date %>
+      <p>Le <%= request.start_date %></p>
+    <% else %>
+      <p>Du <strong><%= request.start_date %></strong> au <strong><%= request.end_date %></strong></p>
+    <% end %>
+  </div>
+  <div class="button-request">
+    <%= link_to "Accepter", bookings_path, class: "button-accept" %>
+    <%= link_to "Refuser", bookings_path, class: "button-refus"%>
+    <%= link_to "Terminer", finished_booking_path(request.id), method: :update, class:"button-done" %>
+  </div>
 </div>
