@@ -11,6 +11,7 @@ a{
   padding: 40px 0;
   display: flex;
   justify-content: space-around;
+  min-height: calc(100vh - 188px)
 }
 
 .card-booking-right,
