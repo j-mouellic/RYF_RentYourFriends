@@ -26,7 +26,7 @@ export default class extends Controller {
     const dateFin = new Date(this.dateFinTarget.value);
     const totalJours = Math.round((dateFin - dateDebut) / (1000 * 60 * 60 * 24));
     const totalPrix = (totalJours + 1)*this.prixtotalValue
-    const PrixRemise = (totalPrix - 20)-(totalPrix * (pourcentage/100));
+    const PrixRemise = (totalPrix + 20)-(totalPrix * (pourcentage/100));
     const resultElement = document.getElementById("resultjours");
     resultElement.innerText = totalJours + 1;
     const resultPrice = document.getElementById("resultprix");

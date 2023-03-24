@@ -1,12 +1,26 @@
 <div class="card-booking-resa">
   <div class="card-top-resa">
     <%= image_tag  booking.friend.picture %>
-    <h3><%= booking.friend.name.capitalize %> vous attend !😀</h3>
+    <% if booking.status == "validated" %>
+      <h3><%= booking.friend.name.capitalize %> a hâte de vous voir 😉</h3>
+    <% elsif booking.status == "pending" %>
+      <h3><%= booking.friend.name.capitalize %> vous attend !😀</h3>
+    <% elsif booking.status == "declined" %>
+      <h3>Vous ne verrez pas <%= booking.friend.name.capitalize %> 🫣</h3>
+    <% else %>
+      <h3><%= booking.friend.name.capitalize %> vous remercie pour ce moment 😘</h3>
+    <% end %>
   </div>
   <div class="statut-layout">
-    <p>Statut :
-      <%= booking.status%>
-    </p>
+      <% if booking.status == "validated" %>
+        <p class="validated">Statut : Validée</p>
+      <% elsif booking.status == "pending" %>
+        <p class="pending">Statut : En attente</p>
+      <% elsif booking.status == "declined" %>
+        <p class="declined">Statut : Refusée</p>
+      <% else %>
+        <p class="done">Statut : Terminée</p>
+      <% end %>
   </div>
   <div class="card-middle-resa">
     <h4>Votre activité est prévue</h4>
@@ -25,9 +39,9 @@
       <i class="fa-brands fa-facebook"></i>
     </div>
   </div>
-  <%= booking.total_price %>
+  <%# <%= booking.total_price %>
   <% if booking.status == "finished" %>
-    <%= link_to "Notez votre expérience !", new_booking_review_path(booking), class: "button-secondary" %>
+    <%= link_to "Notez votre expérience !", new_booking_review_path(booking), class: "button-primary" %>
   <% else %>
     <%= link_to "Modifier votre réservation", edit_booking_path(booking), class: "button-secondary" %>
   <% end %>
