@@ -151,14 +151,12 @@
       </div>
     </div>
 </section>
-
-
 <section data-controller="show-price" class="card-booking-right" data-show-price-prixTotal-value="<%=@friend.price%>">
       <div class="price-user">
         <p><strong><%= @friend.price %>€</strong> par jour</p>
         <div class="reviews">
-          <p>4.5</p>
-          <p>reviews</p>
+          <p>4.5</p>&nbsp;
+          <p>Avis</p>
         </div>
       </div>
       <div class="formulaire">
@@ -168,8 +166,7 @@
           <%= f.button :submit, "Réserver", class: "button-primary-large", data: {turbo_confirm: "Es-tu bien certain de vouloir réserver #{@friend.name} ?" }  %>
           </div>
         <% end %>
-      </div>
-      <div class="price-element">
+        <div class="price-element">
         <div class="label-price">
           <p>Total jours :</p>
           <p id="resultjours"> </p>
@@ -188,5 +185,6 @@
           <p> <strong> Prix total :</strong> </p>
           <p id="resultprix"></p>
         </div>
+      </div>
   </section>
 </section>
