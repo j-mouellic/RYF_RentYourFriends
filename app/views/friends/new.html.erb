@@ -9,7 +9,7 @@
     <%= f.input :genre, collection: ["Homme", "Femme"] %>
     <%= f.input :address, label: "Adresse de votre friend" %>
 
-    <p><strong>Quelles sont ses activités préférées ?</strong>
+    <p class="titre-p-newfriend"><strong>Quelles sont ses activités préférées ?</strong></p>
     <%= f.input :activity_wedding, as: :boolean, label:"Participation aux mariages" %>
     <%= f.input :activity_sam, as: :boolean, label:"Ëtre Sam pour vos soirées" %>
     <%= f.input :activity_diner, as: :boolean, label:"Participation aux dîners" %>
@@ -26,25 +26,26 @@
     <%= f.input :activity_camping, as: :boolean, label:"Accompagnement sorties camping (frais annexes : montage et dépliage de tente)" %>
     <%= f.input :activity_paintball, as: :boolean, label:"Participation aux parties de paintball" %>
 
-    <p><strong>Quels sont ses petits défauts ?<br></strong>
+    <p class="titre-p-newfriend"><strong>Quels sont ses petits défauts ?<br></strong></p>
     <%= f.input :default_complotist, as: :boolean, label:"Complotiste?" %>
     <%= f.input :default_impatient, as: :boolean, label:"Impatient.e?" %>
     <%= f.input :default_disorganized, as: :boolean, label:"désorganisé.e?"%>
     <%= f.input :default_cheap, as: :boolean, label:"Radin.e?" %>
     <%= f.input :default_arrogant, as: :boolean, label:"arrogant.e?" %>
 
-    <p><strong>Quelles sont ses qualités ?<br></strong>
+    <p class="titre-p-newfriend"><strong>Quelles sont ses qualités ?<br></strong></p>
     <%= f.input :quality_funny, as: :boolean, label:"Amusant.e?" %>
     <%= f.input :quality_reliable, as: :boolean, label:"Fiable?" %>
     <%= f.input :quality_honest, as: :boolean, label:"Honnête?" %>
     <%= f.input :quality_good_looking, as: :boolean, label:"Un physique agréable?" %>
     <%= f.input :quality_brave, as: :boolean, label:"Courageux.se?" %>
 
-    <p><strong>Et c'est pas fini...<br></strong>
+    <p class="titre-p-newfriend"><strong>Et c'est pas fini...<br></strong></p>
     <%= f.input :user_id, as: :hidden, value: current_user.id %>
     <%= f.input :photo, as: :file, label:"À quoi votre friend ressemble-t-il/elle?"  %>
     <%= f.input :description, label:"Présentez votre friend ! Soyez sincère, ses défauts peuvent également être ses qualités !" %>
-
+    <div class="try">
     <%= f.button :submit, class: "button-primary-large", label:"ajoute ton friend <br> (il/elle te remerciera)" %>
+    </div>
   <% end %>
 </div>
