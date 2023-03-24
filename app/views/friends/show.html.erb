@@ -105,48 +105,92 @@
     <div class="friend-qualities">
       <h3><%= @friend.name.capitalize %> est très</h3>
       <div>
-        <% if @friend.quality_funny? %>
-          <p>Drôle</p>
-        <% end %>
+        <% if @friend.genre == "Homme" %>
+          <% if @friend.quality_funny? %>
+            <p>Drôle</p>
+          <% end %>
 
-        <% if @friend.quality_reliable? %>
-          <p>Fiable</p>
-        <% end %>
+          <% if @friend.quality_reliable? %>
+            <p>Fiable</p>
+          <% end %>
 
-        <% if @friend.quality_honest? %>
-          <p>Honnête</p>
-        <% end %>
+          <% if @friend.quality_honest? %>
+            <p>Honnête</p>
+          <% end %>
 
-        <% if @friend.quality_good_looking? %>
-          <p>Stylé</p>
-        <% end %>
+          <% if @friend.quality_good_looking? %>
+            <p>Stylé</p>
+          <% end %>
 
-        <% if @friend.quality_brave? %>
-          <p>Courageux</p>
+          <% if @friend.quality_brave? %>
+            <p>Courageux</p>
+          <% end %>
+        <% else %>
+          <% if @friend.quality_funny? %>
+              <p>Drôle</p>
+            <% end %>
+
+            <% if @friend.quality_reliable? %>
+              <p>Fiable</p>
+            <% end %>
+
+            <% if @friend.quality_honest? %>
+              <p>Honnête</p>
+            <% end %>
+
+            <% if @friend.quality_good_looking? %>
+              <p>Stylée</p>
+            <% end %>
+
+            <% if @friend.quality_brave? %>
+              <p>Courageuse</p>
+            <% end %>
         <% end %>
       </div>
     </div>
     <div class="friend-defaults">
       <h3>Mais aussi très</h3>
       <div>
-        <% if @friend.default_complotist? %>
-          <p class="default" >Complotiste</p>
-        <% end %>
+        <% if @friend.genre == "Homme" %>
+          <% if @friend.default_complotist? %>
+            <p class="default" >Complotiste</p>
+          <% end %>
 
-        <% if @friend.default_impatient? %>
-          <p class="default">Impatient</p>
-        <% end %>
+          <% if @friend.default_impatient? %>
+            <p class="default">Impatient</p>
+          <% end %>
 
-        <% if @friend.default_disorganized? %>
-          <p class="default">Bordelique</p>
-        <% end %>
+          <% if @friend.default_disorganized? %>
+            <p class="default">Bordelique</p>
+          <% end %>
 
-        <% if @friend.default_cheap? %>
-          <p class="default">Radin</p>
-        <% end %>
+          <% if @friend.default_cheap? %>
+            <p class="default">Radin</p>
+          <% end %>
 
-        <% if @friend.default_arrogant? %>
-          <p class="default">Arrogant</p>
+          <% if @friend.default_arrogant? %>
+            <p class="default">Arrogant</p>
+          <% end %>
+        <% else %>
+          <% if @friend.default_complotist? %>
+            <p class="default" >Complotiste</p>
+          <% end %>
+
+          <% if @friend.default_impatient? %>
+            <p class="default">Impatiente</p>
+          <% end %>
+
+          <% if @friend.default_disorganized? %>
+            <p class="default">Bordelique</p>
+          <% end %>
+
+          <% if @friend.default_cheap? %>
+            <p class="default">Radine</p>
+          <% end %>
+
+          <% if @friend.default_arrogant? %>
+            <p class="default">Arrogante</p>
+          <% end %>
         <% end %>
       </div>
     </div>
