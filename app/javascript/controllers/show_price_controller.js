@@ -4,7 +4,8 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   static targets = ["dateDebut", "dateFin", "popup"]
   static values = {
-    prixtotal: Number
+    prixtotal: Number,
+    friendid: Number
   }
 
   connect() {
@@ -46,5 +47,20 @@ export default class extends Controller {
         imageAlt: 'A tall image',
         confirmButtonText: 'Votre demande de réservation a bien été transmise !'
       })
-    }
+      console.log(`${this.friendidValue}/bookings`)
+      const url = `${this.friendidValue}/bookings?`+ new URLSearchParams({
+        start_date: this.dateDebutTarget.value,
+        end_date: this.dateFinTarget.value
+    })
+      this.request = new Request(url, {
+        method: 'POST',
+        credentials: "include",
+        headers: {
+          "X-CSRF-Token": document.querySelector(
+            'meta[name="csrf-token"]'
+          ).content
+        }
+    })
+    fetch(this.request)
+  }
 }
