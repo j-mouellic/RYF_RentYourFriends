@@ -7,14 +7,21 @@
         Ou encore vous souhaitez dynamiser la vie sociale de vos ami.e.s ?<br>
         RYF est le site dont vous avez besoin !<br>
         Réservez, louez à l’infini des friends !</p>
-      <button class="button-secondary">Call To Action</button>
     </div>
   </div>
 </div>
 <div id="wrapper-friends">
   <div class="grid-friends">
+      <% colors = ['#3A86FF', '#FB5607', '#2EC4B6', '#8338EC', '#FD1015', '#FFC65A', '#E67E22', '#1EDD88'] %>
     <% @friends.each do |friend| %>
-      <%= render "shared/friend_card", friend: friend %>
+      <% friend_color = colors.sample %>
+      <% if colors.any? %>
+        <% colors.delete(friend_color) %>
+      <% else %>
+        <% colors = ['#3A86FF', '#FB5607', '#2EC4B6', '#8338EC', '#FD1015', '#FFC65A', '#E67E22', '#1EDD88'] %>
+        <% friend_color = colors.sample %>
+      <% end %>
+      <%= render "shared/friend_card", friend: friend, friend_color: friend_color %>
     <% end %>
   </div>
 </div>
